@@ -3,6 +3,7 @@ import { CreateUserProvider } from './create-user.provider';
 import { CreateUserDto } from '../dtos/create-user.dto';
 import { User } from '../user.entity';
 import { FindUserByEmailProvider } from './find-user-by-email.provider';
+import { FindUserByIdProvider } from './find-user-by-id.provider';
 
 @Injectable()
 export class UsersService {
@@ -16,6 +17,11 @@ export class UsersService {
      * injecting the find user by email provider
      */
     private readonly findUserByEmailProvider: FindUserByEmailProvider,
+
+    /**
+     * injecting the find user by id provider
+     */
+    private readonly findUserByIdProvider: FindUserByIdProvider,
   ) {}
 
   /**
@@ -31,5 +37,9 @@ export class UsersService {
 
   public async findUserByEmail(email: string): Promise<User> {
     return await this.findUserByEmailProvider.findUserByEmail(email);
+  }
+
+  public async findUserById(userId: string): Promise<User> {
+    return await this.findUserByIdProvider.findUserById(userId);
   }
 }
