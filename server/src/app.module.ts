@@ -15,6 +15,9 @@ import { RolesGuard } from './auth/guards/roles/roles.guard';
 import { AccessTokenGuard } from './auth/guards/access-token/access-token.guard';
 import jwtConfig from './auth/config/jwt.config';
 import { JwtModule } from '@nestjs/jwt';
+import { ProductsModule } from './products/products.module';
+import { CartModule } from './cart/cart.module';
+import { OrdersModule } from './orders/orders.module';
 
 /**
  * app environment
@@ -43,11 +46,11 @@ const ENV = process.env.NODE_ENV;
           host: configService.get('database.host'),
           database: configService.get('database.name'),
           ssl:
-            process.env.NODE_ENV === 'development'
-              ? false
-              : {
+            process.env.NODE_ENV === 'production'
+              ? {
                   rejectUnauthorized: false,
-                },
+                }
+              : false,
           logging: true,
         };
       },
@@ -56,6 +59,9 @@ const ENV = process.env.NODE_ENV;
     AuthModule,
     ConfigModule.forFeature(jwtConfig),
     JwtModule.registerAsync(jwtConfig.asProvider()),
+    ProductsModule,
+    CartModule,
+    OrdersModule,
   ],
   controllers: [AppController],
   providers: [
