@@ -2,8 +2,8 @@ POST http://localhost:3001/api/v1/users
 Content-Type: application/json
 
 {
-    "firstname": "Frank",
-    "lastname": "Boat", 
-    "email": "fejim188@gmail.com",
+    "firstname": "Ejim",
+    "lastname": "Favour", 
+    "email": "favour@gmail.com",
     "password": "@LordJimmy989"
 }
