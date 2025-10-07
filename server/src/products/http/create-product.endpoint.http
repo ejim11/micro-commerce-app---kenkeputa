@@ -1,0 +1,13 @@
+POST http://localhost:3001/api/v1/products
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0NjUwMmY1Yy05YjMzLTRkNWItYjg2NC0xNTE1M2QzMGRhYmUiLCJlbWFpbCI6ImZlamltMTg4QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1OTY2NDQ3MywiZXhwIjoxNzU5NjY4MDczLCJhdWQiOiJsb2NhbGhvc3Q6MzAwMSIsImlzcyI6ImxvY2FsaG9zdDozMDAxIn0.lMB58EAeTwEb5rRR0x_BUqlGJXfNZ0ME7avfdrPNPfw
+
+{
+    "name": "Dark Silver Cutlery Set",
+    "category": "Utensils",
+    "description": "Sustainable fork, knife, spoon set – zero plastic waste.",
+    "price": 25.0,
+    "stock": 20,
+    "imageUrl":
+      "https://via.placeholder.com/300x300/228B22/FFFFFF?text=Bamboo+Cutlery"
+}

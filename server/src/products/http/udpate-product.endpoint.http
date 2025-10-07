@@ -1,0 +1,8 @@
+PATCH http://localhost:3001/api/v1/products/16189c51-10b6-48cc-abc5-af778e478e03
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0NjUwMmY1Yy05YjMzLTRkNWItYjg2NC0xNTE1M2QzMGRhYmUiLCJlbWFpbCI6ImZlamltMTg4QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1OTY4Mjk2NSwiZXhwIjoxNzU5Njg2NTY1LCJhdWQiOiJsb2NhbGhvc3Q6MzAwMSIsImlzcyI6ImxvY2FsaG9zdDozMDAxIn0.yfTDWwamtlVyAU-sMd3XbjwlvvZIYLEAq440uKWaPUE
+
+{
+    "isDeleted": false,
+    "deletedAt": null
+}
