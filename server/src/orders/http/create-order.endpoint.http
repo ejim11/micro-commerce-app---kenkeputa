@@ -1,0 +1,9 @@
+POST http://localhost:3001/api/v1/orders
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiNDIyNDFiYy02ZmY5LTQ1MWMtYWZiNS0yZmM3N2Q3YjBlMDEiLCJlbWFpbCI6ImZhdm91ckBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc1OTc3MTI5MiwiZXhwIjoxNzU5Nzc0ODkyLCJhdWQiOiJsb2NhbGhvc3Q6MzAwMSIsImlzcyI6ImxvY2FsaG9zdDozMDAxIn0.Ye8aZ7YdHuVEghWmTdAsngT4Y187lUBNc4rNTBZAYOU
+
+{
+  "shippingAddress": "123 Main St, Cityville",
+  "billingAddress": "456 Elm St, Townsville",
+  "paymentMethod": "credit_card"
+}
