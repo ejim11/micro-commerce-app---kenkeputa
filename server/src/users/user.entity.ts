@@ -1,13 +1,16 @@
 import { Exclude } from 'class-transformer';
-import { Role } from 'src/auth/enums/role-type.enum';
+import { Role } from '../auth/enums/role-type.enum';
 import {
   Column,
   CreateDateColumn,
   Entity,
   Index,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { CartItem } from 'src/cart/cart-item.entity';
+import { Order } from 'src/orders/order.entity';
 
 @Entity()
 export class User {
@@ -58,4 +61,10 @@ export class User {
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @OneToMany(() => CartItem, (cartItem) => cartItem.user)
+  cartItems?: CartItem[];
+
+  @OneToMany(() => Order, (order) => order.user)
+  orders: Order[];
 }
