@@ -92,10 +92,18 @@ npm run start:dev
 
 The server will start on `http://localhost:3001`
 
+#### Generate Code Documentation
+
+```bash
+npm run doc
+```
+
+This will generate Compodoc documentation for the codebase.
+
 #### Access Documentation
 
 - **API Documentation (Swagger)**: http://localhost:3001/api-doc
-- **Code Documentation**: http://127.0.0.1:3003/
+- **Code Documentation (Compodoc)**: http://127.0.0.1:3003/
 
 ### 3. Frontend Setup (Client)
 
