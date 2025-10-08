@@ -112,30 +112,33 @@ class _ProductsScreenState extends ConsumerState<ProductsScreen> {
             .read(productProvider.notifier)
             .refreshProducts(accessToken: accessToken);
       },
-      child: GridView.builder(
-        controller: _scrollController,
-        padding: const EdgeInsets.all(12),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 0.7,
-          crossAxisSpacing: 12,
-          mainAxisSpacing: 12,
-        ),
-        itemCount:
-            productState.products.length + (productState.isLoading ? 1 : 0),
-        itemBuilder: (context, index) {
-          if (index == productState.products.length) {
-            return const Center(
-              child: Padding(
-                padding: EdgeInsets.all(8.0),
-                child: CircularProgressIndicator(),
-              ),
-            );
-          }
+      child: Container(
+        color: Colors.grey[100],
+        child: GridView.builder(
+          controller: _scrollController,
+          padding: const EdgeInsets.all(12),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 0.7,
+            crossAxisSpacing: 12,
+            mainAxisSpacing: 12,
+          ),
+          itemCount:
+              productState.products.length + (productState.isLoading ? 1 : 0),
+          itemBuilder: (context, index) {
+            if (index == productState.products.length) {
+              return const Center(
+                child: Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: CircularProgressIndicator(),
+                ),
+              );
+            }
 
-          final product = productState.products[index];
-          return ProductCard(product: product);
-        },
+            final product = productState.products[index];
+            return ProductCard(product: product);
+          },
+        ),
       ),
     );
   }
@@ -149,7 +152,8 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 2,
+      // elevation: 2,
+      color: Colors.white,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: InkWell(
         onTap: () {
@@ -208,7 +212,7 @@ class ProductCard extends StatelessWidget {
                         product.category,
                         style: TextStyle(
                           fontSize: 10,
-                          color: Theme.of(context).colorScheme.onPrimary,
+                          color: Colors.white,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -220,17 +224,19 @@ class ProductCard extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
+                        color: Colors.black,
                       ),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
-                    const Spacer(),
+                    // const SizedBox(height: 10),
                     // Price and Stock
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          '\${product.price}',
+                          // '\${product.price}',
+                          '\$900',
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
