@@ -7,7 +7,7 @@ export const seedProducts = [
     price: 12.0,
     stock: 50,
     imageUrl:
-      'https://via.placeholder.com/300x300/228B22/FFFFFF?text=Bamboo+Cutlery',
+      'https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=400&h=400&fit=crop',
   },
   {
     name: 'Reusable Silicone Spatulas',
@@ -17,7 +17,7 @@ export const seedProducts = [
     price: 8.0,
     stock: 30,
     imageUrl:
-      'https://via.placeholder.com/300x300/FF6347/FFFFFF?text=Silicone+Spatulas',
+      'https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=400&h=400&fit=crop',
   },
   {
     name: 'Wooden Spoons Set',
@@ -27,7 +27,7 @@ export const seedProducts = [
     price: 5.0,
     stock: 75,
     imageUrl:
-      'https://via.placeholder.com/300x300/8B4513/FFFFFF?text=Wooden+Spoons',
+      'https://images.unsplash.com/photo-1599751449307-1fc0b1e4e841?w=400&h=400&fit=crop',
   },
   {
     name: 'Bamboo Whisk',
@@ -37,7 +37,7 @@ export const seedProducts = [
     price: 6.5,
     stock: 40,
     imageUrl:
-      'https://via.placeholder.com/300x300/228B22/FFFFFF?text=Bamboo+Whisk',
+      'https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=400&h=400&fit=crop',
   },
   {
     name: 'Silicone Tongs',
@@ -47,7 +47,7 @@ export const seedProducts = [
     price: 7.5,
     stock: 55,
     imageUrl:
-      'https://via.placeholder.com/300x300/FF6347/FFFFFF?text=Silicone+Tongs',
+      'https://images.unsplash.com/photo-1584990347449-39d4a3b91a7d?w=400&h=400&fit=crop',
   },
   {
     name: 'Coconut Shell Ladle',
@@ -56,7 +56,7 @@ export const seedProducts = [
     price: 9.0,
     stock: 35,
     imageUrl:
-      'https://via.placeholder.com/300x300/DEB887/000000?text=Coconut+Ladle',
+      'https://images.unsplash.com/photo-1606923829579-0cb981a83e2e?w=400&h=400&fit=crop',
   },
   // Storage (6 products)
   {
@@ -67,7 +67,7 @@ export const seedProducts = [
     price: 10.0,
     stock: 60,
     imageUrl:
-      'https://via.placeholder.com/300x300/FFD700/000000?text=Beeswax+Wraps',
+      'https://images.unsplash.com/photo-1591361443450-a891a97c1d35?w=400&h=400&fit=crop',
   },
   {
     name: 'Glass Jars with Lids',
@@ -77,7 +77,7 @@ export const seedProducts = [
     price: 15.0,
     stock: 25,
     imageUrl:
-      'https://via.placeholder.com/300x300/87CEEB/000000?text=Glass+Jars',
+      'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=400&h=400&fit=crop',
   },
   {
     name: 'Bamboo Food Containers',
@@ -87,7 +87,7 @@ export const seedProducts = [
     price: 18.0,
     stock: 35,
     imageUrl:
-      'https://via.placeholder.com/300x300/228B22/FFFFFF?text=Bamboo+Containers',
+      'https://images.unsplash.com/photo-1584862728452-2750a74f824d?w=400&h=400&fit=crop',
   },
   {
     name: 'Silicone Food Bags',
@@ -97,7 +97,7 @@ export const seedProducts = [
     price: 9.5,
     stock: 45,
     imageUrl:
-      'https://via.placeholder.com/300x300/FF6347/FFFFFF?text=Silicone+Bags',
+      'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400&h=400&fit=crop',
   },
   {
     name: 'Stainless Steel Canisters',
@@ -106,7 +106,7 @@ export const seedProducts = [
     price: 22.0,
     stock: 20,
     imageUrl:
-      'https://via.placeholder.com/300x300/C0C0C0/000000?text=Steel+Canisters',
+      'https://images.unsplash.com/photo-1609840114035-3c981769e3ad?w=400&h=400&fit=crop',
   },
   {
     name: 'Fabric Produce Bags',
@@ -116,7 +116,7 @@ export const seedProducts = [
     price: 6.0,
     stock: 80,
     imageUrl:
-      'https://via.placeholder.com/300x300/F5DEB3/000000?text=Fabric+Bags',
+      'https://images.unsplash.com/photo-1591086509456-4e566b60f93f?w=400&h=400&fit=crop',
   },
   // Drinkware (6 products)
   {
@@ -127,7 +127,7 @@ export const seedProducts = [
     price: 20.0,
     stock: 20,
     imageUrl:
-      'https://via.placeholder.com/300x300/C0C0C0/000000?text=Steel+Tumbler',
+      'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400&h=400&fit=crop',
   },
   {
     name: 'Bamboo Straws Pack (10-pack)',
@@ -137,7 +137,7 @@ export const seedProducts = [
     price: 4.0,
     stock: 100,
     imageUrl:
-      'https://via.placeholder.com/300x300/228B22/FFFFFF?text=Bamboo+Straws',
+      'https://images.unsplash.com/photo-1528821128474-27f963b062bf?w=400&h=400&fit=crop',
   },
   {
     name: 'Reusable Coffee Filters',
@@ -147,7 +147,7 @@ export const seedProducts = [
     price: 7.0,
     stock: 55,
     imageUrl:
-      'https://via.placeholder.com/300x300/8B4513/FFFFFF?text=Coffee+Filters',
+      'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400&h=400&fit=crop',
   },
   {
     name: 'Glass Water Bottle',
@@ -155,9 +155,9 @@ export const seedProducts = [
     description:
       '32oz borosilicate glass bottle with silicone sleeve and bamboo cap.',
     price: 16.0,
-    stock: 15, // Low stock for demo edge case
+    stock: 15,
     imageUrl:
-      'https://via.placeholder.com/300x300/87CEEB/000000?text=Glass+Bottle',
+      'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400&h=400&fit=crop',
   },
   {
     name: 'Ceramic Mug Set',
@@ -167,7 +167,7 @@ export const seedProducts = [
     price: 14.0,
     stock: 40,
     imageUrl:
-      'https://via.placeholder.com/300x300/D2691E/FFFFFF?text=Ceramic+Mugs',
+      'https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&h=400&fit=crop',
   },
   {
     name: 'Collapsible Silicone Cup',
@@ -176,7 +176,7 @@ export const seedProducts = [
     price: 11.0,
     stock: 65,
     imageUrl:
-      'https://via.placeholder.com/300x300/FF6347/FFFFFF?text=Silicone+Cup',
+      'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=400&h=400&fit=crop',
   },
   // Cleaning (5 products)
   {
@@ -186,7 +186,7 @@ export const seedProducts = [
     price: 5.5,
     stock: 90,
     imageUrl:
-      'https://via.placeholder.com/300x300/90EE90/000000?text=Eco+Sponge',
+      'https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400&h=400&fit=crop',
   },
   {
     name: 'Bamboo Scrub Brush',
@@ -195,7 +195,7 @@ export const seedProducts = [
     price: 4.5,
     stock: 70,
     imageUrl:
-      'https://via.placeholder.com/300x300/228B22/FFFFFF?text=Bamboo+Brush',
+      'https://images.unsplash.com/photo-1585421514738-01798e348b17?w=400&h=400&fit=crop',
   },
   {
     name: 'Coconut Coir Dish Brush',
@@ -205,7 +205,7 @@ export const seedProducts = [
     price: 6.0,
     stock: 50,
     imageUrl:
-      'https://via.placeholder.com/300x300/DEB887/000000?text=Coir+Brush',
+      'https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=400&h=400&fit=crop',
   },
   {
     name: 'Reusable Microfiber Cloths',
@@ -214,7 +214,7 @@ export const seedProducts = [
     price: 8.0,
     stock: 85,
     imageUrl:
-      'https://via.placeholder.com/300x300/ADD8E6/000000?text=Microfiber+Cloths',
+      'https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=400&h=400&fit=crop',
   },
   {
     name: 'Wooden Bottle Brush',
@@ -224,7 +224,7 @@ export const seedProducts = [
     price: 7.0,
     stock: 60,
     imageUrl:
-      'https://via.placeholder.com/300x300/8B4513/FFFFFF?text=Wooden+Brush',
+      'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=400&h=400&fit=crop',
   },
   // Baking (5 products)
   {
@@ -234,7 +234,7 @@ export const seedProducts = [
     price: 13.0,
     stock: 45,
     imageUrl:
-      'https://via.placeholder.com/300x300/FF6347/FFFFFF?text=Baking+Mat',
+      'https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=400&h=400&fit=crop',
   },
   {
     name: 'Wooden Rolling Pin',
@@ -243,7 +243,7 @@ export const seedProducts = [
     price: 10.0,
     stock: 55,
     imageUrl:
-      'https://via.placeholder.com/300x300/8B4513/FFFFFF?text=Rolling+Pin',
+      'https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=400&h=400&fit=crop',
   },
   {
     name: 'Bamboo Pastry Board',
@@ -252,7 +252,7 @@ export const seedProducts = [
     price: 16.0,
     stock: 30,
     imageUrl:
-      'https://via.placeholder.com/300x300/228B22/FFFFFF?text=Pastry+Board',
+      'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=400&fit=crop',
   },
   {
     name: 'Silicone Muffin Cups',
@@ -261,7 +261,7 @@ export const seedProducts = [
     price: 9.0,
     stock: 75,
     imageUrl:
-      'https://via.placeholder.com/300x300/FF6347/FFFFFF?text=Muffin+Cups',
+      'https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=400&h=400&fit=crop',
   },
   {
     name: 'Eco Cooling Rack',
@@ -270,7 +270,7 @@ export const seedProducts = [
     price: 12.5,
     stock: 40,
     imageUrl:
-      'https://via.placeholder.com/300x300/C0C0C0/FFFFFF?text=Cooling+Rack',
+      'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400&h=400&fit=crop',
   },
   // Cutting (6 products)
   {
@@ -280,16 +280,16 @@ export const seedProducts = [
     price: 19.0,
     stock: 25,
     imageUrl:
-      'https://via.placeholder.com/300x300/228B22/FFFFFF?text=Cutting+Board',
+      'https://images.unsplash.com/photo-1594756202469-9ff9799b2e4e?w=400&h=400&fit=crop',
   },
   {
     name: 'Eco Knife Set',
     category: 'Cutting',
     description: 'Recycled stainless steel knives with bamboo handles.',
     price: 28.0,
-    stock: 15, // Low stock for demo
+    stock: 15,
     imageUrl:
-      'https://via.placeholder.com/300x300/696969/FFFFFF?text=Eco+Knives',
+      'https://images.unsplash.com/photo-1593618998160-e34014e67546?w=400&h=400&fit=crop',
   },
   {
     name: 'Silicone Gripping Mat',
@@ -298,7 +298,7 @@ export const seedProducts = [
     price: 11.0,
     stock: 65,
     imageUrl:
-      'https://via.placeholder.com/300x300/FF6347/FFFFFF?text=Gripping+Mat',
+      'https://images.unsplash.com/photo-1556911220-bff31c812dba?w=400&h=400&fit=crop',
   },
   {
     name: 'Wooden Salad Bowl',
@@ -307,7 +307,7 @@ export const seedProducts = [
     price: 14.5,
     stock: 35,
     imageUrl:
-      'https://via.placeholder.com/300x300/8B4513/FFFFFF?text=Salad+Bowl',
+      'https://images.unsplash.com/photo-1547928576-d6a59a2e2f3e?w=400&h=400&fit=crop',
   },
   {
     name: 'Herb Scissors',
@@ -316,7 +316,7 @@ export const seedProducts = [
     price: 8.5,
     stock: 80,
     imageUrl:
-      'https://via.placeholder.com/300x300/228B22/FFFFFF?text=Herb+Scissors',
+      'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=400&h=400&fit=crop',
   },
   {
     name: 'Peeler Set',
@@ -325,7 +325,7 @@ export const seedProducts = [
     price: 7.0,
     stock: 70,
     imageUrl:
-      'https://via.placeholder.com/300x300/228B22/FFFFFF?text=Peeler+Set',
+      'https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=400&h=400&fit=crop',
   },
   // Serveware (6 products)
   {
@@ -335,7 +335,7 @@ export const seedProducts = [
     price: 17.0,
     stock: 40,
     imageUrl:
-      'https://via.placeholder.com/300x300/228B22/FFFFFF?text=Serving+Platter',
+      'https://images.unsplash.com/photo-1606923829579-0cb981a83e2e?w=400&h=400&fit=crop',
   },
   {
     name: 'Compostable Napkins Pack',
@@ -344,7 +344,7 @@ export const seedProducts = [
     price: 5.0,
     stock: 100,
     imageUrl:
-      'https://via.placeholder.com/300x300/F4A460/000000?text=Compostable+Napkins',
+      'https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?w=400&h=400&fit=crop',
   },
   {
     name: 'Ceramic Serving Bowl',
@@ -353,7 +353,7 @@ export const seedProducts = [
     price: 21.0,
     stock: 20,
     imageUrl:
-      'https://via.placeholder.com/300x300/D2691E/FFFFFF?text=Serving+Bowl',
+      'https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=400&h=400&fit=crop',
   },
   {
     name: 'Wooden Cheese Board',
@@ -362,7 +362,7 @@ export const seedProducts = [
     price: 24.0,
     stock: 18,
     imageUrl:
-      'https://via.placeholder.com/300x300/8B4513/FFFFFF?text=Cheese+Board',
+      'https://images.unsplash.com/photo-1452251889946-8ff5ea7f27f3?w=400&h=400&fit=crop',
   },
   {
     name: 'Silicone Trivet Set',
@@ -371,7 +371,7 @@ export const seedProducts = [
     price: 10.5,
     stock: 50,
     imageUrl:
-      'https://via.placeholder.com/300x300/FF6347/FFFFFF?text=Trivet+Set',
+      'https://images.unsplash.com/photo-1556911220-bff31c812dba?w=400&h=400&fit=crop',
   },
   {
     name: 'Bamboo Coasters (Set of 6)',
@@ -380,6 +380,6 @@ export const seedProducts = [
     price: 9.0,
     stock: 75,
     imageUrl:
-      'https://via.placeholder.com/300x300/228B22/FFFFFF?text=Bamboo+Coasters',
+      'https://images.unsplash.com/photo-1577705998148-6da4f3963bc8?w=400&h=400&fit=crop',
   },
 ];
