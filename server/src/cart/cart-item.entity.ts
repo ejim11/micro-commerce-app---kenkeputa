@@ -1,7 +1,7 @@
 // src/cart/entities/cart-item.entity.ts
 // User-based cart item entity: Persists cart per user in DB
-import { Product } from 'src/products/product.entity';
-import { User } from 'src/users/user.entity';
+import { Product } from '../products/product.entity';
+import { User } from '../users/user.entity';
 import {
   Entity,
   PrimaryGeneratedColumn,
