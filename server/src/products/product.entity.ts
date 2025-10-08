@@ -8,9 +8,9 @@ import {
   OneToMany,
 } from 'typeorm';
 import { ProductCategory } from './enums/product-category.enum';
-import { CartItem } from 'src/cart/cart-item.entity';
-import { Order } from 'src/orders/order.entity';
-import { OrderItem } from 'src/orders/order-item.entity';
+import { CartItem } from '../cart/cart-item.entity';
+import { Order } from '../orders/order.entity';
+import { OrderItem } from '../orders/order-item.entity';
 
 @Entity('products')
 @Index(['name'])
