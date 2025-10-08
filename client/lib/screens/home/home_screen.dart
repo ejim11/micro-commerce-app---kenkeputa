@@ -48,8 +48,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.onPrimary,
-        foregroundColor: Colors.white,
+        backgroundColor: Colors.white,
+        foregroundColor: Theme.of(context).colorScheme.onPrimary,
         title: Text(
           _selectedIndex == 0
               ? 'Products'
@@ -60,7 +60,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         ),
         actions: [
           PopupMenuButton(
-            icon: const Icon(Icons.more_vert),
+            color: Colors.white,
+            icon: Icon(
+              Icons.more_vert,
+              color: Theme.of(context).colorScheme.onPrimary,
+            ),
             itemBuilder: (context) => [
               PopupMenuItem(
                 enabled: false,
@@ -69,26 +73,35 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   children: [
                     Text(
                       '${user?.firstname ?? ''} ${user?.lastname ?? ''}',
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
+                        color: Theme.of(context).colorScheme.onPrimary,
                       ),
                     ),
                     const SizedBox(height: 4),
                     Text(
                       user?.email ?? '',
-                      style: TextStyle(fontSize: 12, color: Colors.grey[600]),
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Theme.of(context).colorScheme.onPrimary,
+                      ),
                     ),
                     const Divider(),
                   ],
                 ),
               ),
               PopupMenuItem(
-                child: const Row(
+                child: Row(
                   children: [
                     Icon(Icons.person, size: 20),
                     SizedBox(width: 8),
-                    Text('Profile'),
+                    Text(
+                      'Profile',
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        color: Theme.of(context).colorScheme.onPrimary,
+                      ),
+                    ),
                   ],
                 ),
                 onTap: () {
@@ -96,11 +109,16 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 },
               ),
               PopupMenuItem(
-                child: const Row(
+                child: Row(
                   children: [
                     Icon(Icons.settings, size: 20),
                     SizedBox(width: 8),
-                    Text('Settings'),
+                    Text(
+                      'Settings',
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        color: Theme.of(context).colorScheme.onPrimary,
+                      ),
+                    ),
                   ],
                 ),
                 onTap: () {
@@ -125,6 +143,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
+        backgroundColor: Colors.white,
         selectedItemColor: Theme.of(context).colorScheme.onPrimary,
         unselectedItemColor: Colors.grey,
         type: BottomNavigationBarType.fixed,
