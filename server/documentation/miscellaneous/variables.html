@@ -1,0 +1,857 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>server documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">server documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Variables</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#ActiveUser" title="src/auth/decorator/active-user.decorator.ts" ><b>ActiveUser</b>&nbsp;&nbsp;&nbsp;(src/.../active-user.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Auth" title="src/auth/decorator/auth.decorator.ts" ><b>Auth</b>&nbsp;&nbsp;&nbsp;(src/.../auth.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#AUTH_TYPE_KEY" title="src/auth/constants/auth.constant.ts" ><b>AUTH_TYPE_KEY</b>&nbsp;&nbsp;&nbsp;(src/.../auth.constant.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ENV" title="src/app.module.ts" ><b>ENV</b>&nbsp;&nbsp;&nbsp;(src/.../app.module.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#REQUEST_USER_KEY" title="src/auth/constants/auth.constant.ts" ><b>REQUEST_USER_KEY</b>&nbsp;&nbsp;&nbsp;(src/.../auth.constant.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Roles" title="src/auth/decorator/role.decorator.ts" ><b>Roles</b>&nbsp;&nbsp;&nbsp;(src/.../role.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ROLES_KEY" title="src/auth/constants/role.constant.ts" ><b>ROLES_KEY</b>&nbsp;&nbsp;&nbsp;(src/.../role.constant.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#seedProducts" title="src/seed-file.ts" ><b>seedProducts</b>&nbsp;&nbsp;&nbsp;(src/.../seed-file.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>src/auth/decorator/active-user.decorator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ActiveUser"></a>
+                    <span class="name">
+                        <span ><b>ActiveUser</b></span>
+                        <a href="#ActiveUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createParamDecorator(
+  (field: keyof ActiveUserData | undefined, ctx: ExecutionContext) &#x3D;&gt; {
+    const request &#x3D; ctx.switchToHttp().getRequest();
+    const user: ActiveUserData &#x3D; request[REQUEST_USER_KEY];
+
+    return field ? user?.[field] : user;
+  },
+)</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Custom param decorator for the active user</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/auth/decorator/auth.decorator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Auth"></a>
+                    <span class="name">
+                        <span ><b>Auth</b></span>
+                        <a href="#Auth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(...authTypes: AuthType[]) &#x3D;&gt;
+  SetMetadata(AUTH_TYPE_KEY, authTypes)</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>decorator for guarding user authentication</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/auth/constants/auth.constant.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="AUTH_TYPE_KEY"></a>
+                    <span class="name">
+                        <span ><b>AUTH_TYPE_KEY</b></span>
+                        <a href="#AUTH_TYPE_KEY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;authType&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>constant for auth type</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="REQUEST_USER_KEY"></a>
+                    <span class="name">
+                        <span ><b>REQUEST_USER_KEY</b></span>
+                        <a href="#REQUEST_USER_KEY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;user&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>constant for request user</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app.module.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ENV"></a>
+                    <span class="name">
+                        <span ><b>ENV</b></span>
+                        <a href="#ENV"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>process.env.NODE_ENV</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>app environment</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/auth/decorator/role.decorator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Roles"></a>
+                    <span class="name">
+                        <span ><b>Roles</b></span>
+                        <a href="#Roles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(...roles: Role[]) &#x3D;&gt; SetMetadata(ROLES_KEY, roles)</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>decoraror for gaurding the user roles</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/auth/constants/role.constant.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ROLES_KEY"></a>
+                    <span class="name">
+                        <span ><b>ROLES_KEY</b></span>
+                        <a href="#ROLES_KEY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;roles&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>constant for the roles</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/seed-file.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="seedProducts"></a>
+                    <span class="name">
+                        <span ><b>seedProducts</b></span>
+                        <a href="#seedProducts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  // Utensils (6 products)
+  {
+    name: &#x27;Bamboo Cutlery Set&#x27;,
+    category: &#x27;Utensils&#x27;,
+    description: &#x27;Sustainable fork, knife, spoon set – zero plastic waste.&#x27;,
+    price: 12.0,
+    stock: 50,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1610701596007-11502861dcfa?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Reusable Silicone Spatulas&#x27;,
+    category: &#x27;Utensils&#x27;,
+    description:
+      &#x27;Durable, heat-resistant spatulas made from food-grade silicone.&#x27;,
+    price: 8.0,
+    stock: 30,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Wooden Spoons Set&#x27;,
+    category: &#x27;Utensils&#x27;,
+    description:
+      &#x27;Handcrafted from FSC-certified wood, perfect for non-stick cookware.&#x27;,
+    price: 5.0,
+    stock: 75,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1599751449307-1fc0b1e4e841?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Bamboo Whisk&#x27;,
+    category: &#x27;Utensils&#x27;,
+    description:
+      &#x27;Eco whisk for whipping eggs or sauces without synthetic bristles.&#x27;,
+    price: 6.5,
+    stock: 40,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1578916171728-46686eac8d58?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Silicone Tongs&#x27;,
+    category: &#x27;Utensils&#x27;,
+    description:
+      &#x27;BPA-free silicone-coated tongs for safe flipping and gripping.&#x27;,
+    price: 7.5,
+    stock: 55,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1584990347449-39d4a3b91a7d?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Coconut Shell Ladle&#x27;,
+    category: &#x27;Utensils&#x27;,
+    description: &#x27;Hand-carved from natural coconut shell, fully biodegradable.&#x27;,
+    price: 9.0,
+    stock: 35,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1606923829579-0cb981a83e2e?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  // Storage (6 products)
+  {
+    name: &#x27;Beeswax Wraps Pack&#x27;,
+    category: &#x27;Storage&#x27;,
+    description:
+      &#x27;Natural beeswax-coated cotton wraps – reusable alternative to plastic.&#x27;,
+    price: 10.0,
+    stock: 60,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1591361443450-a891a97c1d35?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Glass Jars with Lids&#x27;,
+    category: &#x27;Storage&#x27;,
+    description:
+      &#x27;Borosilicate glass jars for dry goods storage, airtight bamboo lids.&#x27;,
+    price: 15.0,
+    stock: 25,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1590736969955-71cc94901144?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Bamboo Food Containers&#x27;,
+    category: &#x27;Storage&#x27;,
+    description:
+      &#x27;Leak-proof bamboo fiber containers, microwave-safe and compostable.&#x27;,
+    price: 18.0,
+    stock: 35,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1584862728452-2750a74f824d?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Silicone Food Bags&#x27;,
+    category: &#x27;Storage&#x27;,
+    description:
+      &#x27;Reusable zip-lock bags made from platinum silicone, freezer-safe.&#x27;,
+    price: 9.5,
+    stock: 45,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Stainless Steel Canisters&#x27;,
+    category: &#x27;Storage&#x27;,
+    description: &#x27;Rust-proof stainless steel canisters with eco cork seals.&#x27;,
+    price: 22.0,
+    stock: 20,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1609840114035-3c981769e3ad?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Fabric Produce Bags&#x27;,
+    category: &#x27;Storage&#x27;,
+    description:
+      &#x27;Organic cotton mesh bags for fresh produce – washable and breathable.&#x27;,
+    price: 6.0,
+    stock: 80,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1591086509456-4e566b60f93f?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  // Drinkware (6 products)
+  {
+    name: &#x27;Stainless Steel Tumbler&#x27;,
+    category: &#x27;Drinkware&#x27;,
+    description:
+      &#x27;Insulated 20oz tumbler keeps drinks hot/cold for 24 hours, BPA-free.&#x27;,
+    price: 20.0,
+    stock: 20,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1602143407151-7111542de6e8?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Bamboo Straws Pack (10-pack)&#x27;,
+    category: &#x27;Drinkware&#x27;,
+    description:
+      &#x27;Reusable bamboo straws with cleaning brush – naturally antibacterial.&#x27;,
+    price: 4.0,
+    stock: 100,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1528821128474-27f963b062bf?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Reusable Coffee Filters&#x27;,
+    category: &#x27;Drinkware&#x27;,
+    description:
+      &#x27;Gold-tone mesh filters for pour-over coffee, reduces paper waste.&#x27;,
+    price: 7.0,
+    stock: 55,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Glass Water Bottle&#x27;,
+    category: &#x27;Drinkware&#x27;,
+    description:
+      &#x27;32oz borosilicate glass bottle with silicone sleeve and bamboo cap.&#x27;,
+    price: 16.0,
+    stock: 15,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1602143407151-7111542de6e8?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Ceramic Mug Set&#x27;,
+    category: &#x27;Drinkware&#x27;,
+    description:
+      &#x27;Hand-thrown ceramic mugs from recycled clay – microwave safe.&#x27;,
+    price: 14.0,
+    stock: 40,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Collapsible Silicone Cup&#x27;,
+    category: &#x27;Drinkware&#x27;,
+    description: &#x27;Portable 12oz cup folds flat, made from food-safe silicone.&#x27;,
+    price: 11.0,
+    stock: 65,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  // Cleaning (5 products)
+  {
+    name: &#x27;Eco Sponge Set&#x27;,
+    category: &#x27;Cleaning&#x27;,
+    description: &#x27;Plant-based cellulose sponges – biodegradable and scrubby.&#x27;,
+    price: 5.5,
+    stock: 90,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1563453392212-326f5e854473?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Bamboo Scrub Brush&#x27;,
+    category: &#x27;Cleaning&#x27;,
+    description: &#x27;Natural fiber bristles on bamboo handle – compostable.&#x27;,
+    price: 4.5,
+    stock: 70,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1585421514738-01798e348b17?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Coconut Coir Dish Brush&#x27;,
+    category: &#x27;Cleaning&#x27;,
+    description:
+      &#x27;Stiff coir fibers from coconut husks for tough grease removal.&#x27;,
+    price: 6.0,
+    stock: 50,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1600334129128-685c5582fd35?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Reusable Microfiber Cloths&#x27;,
+    category: &#x27;Cleaning&#x27;,
+    description: &#x27;Washable cloths trap dust and spills without chemicals.&#x27;,
+    price: 8.0,
+    stock: 85,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1583947215259-38e31be8751f?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Wooden Bottle Brush&#x27;,
+    category: &#x27;Cleaning&#x27;,
+    description:
+      &#x27;FSC wood handle with natural bristles for deep cleaning bottles.&#x27;,
+    price: 7.0,
+    stock: 60,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  // Baking (5 products)
+  {
+    name: &#x27;Silicone Baking Mat&#x27;,
+    category: &#x27;Baking&#x27;,
+    description: &#x27;Non-stick, reusable mat – replaces parchment paper.&#x27;,
+    price: 13.0,
+    stock: 45,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Wooden Rolling Pin&#x27;,
+    category: &#x27;Baking&#x27;,
+    description: &#x27;Smooth FSC beechwood rolling pin for dough prep.&#x27;,
+    price: 10.0,
+    stock: 55,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Bamboo Pastry Board&#x27;,
+    category: &#x27;Baking&#x27;,
+    description: &#x27;Portable bamboo board with measurements for precise baking.&#x27;,
+    price: 16.0,
+    stock: 30,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Silicone Muffin Cups&#x27;,
+    category: &#x27;Baking&#x27;,
+    description: &#x27;Food-grade silicone cups – oven-safe up to 450°F.&#x27;,
+    price: 9.0,
+    stock: 75,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Eco Cooling Rack&#x27;,
+    category: &#x27;Baking&#x27;,
+    description: &#x27;Stainless steel rack with bamboo frame – rust-resistant.&#x27;,
+    price: 12.5,
+    stock: 40,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1556910103-1c02745aae4d?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  // Cutting (6 products)
+  {
+    name: &#x27;Bamboo Cutting Board&#x27;,
+    category: &#x27;Cutting&#x27;,
+    description: &#x27;Antibacterial bamboo board – gentle on knives.&#x27;,
+    price: 19.0,
+    stock: 25,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1594756202469-9ff9799b2e4e?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Eco Knife Set&#x27;,
+    category: &#x27;Cutting&#x27;,
+    description: &#x27;Recycled stainless steel knives with bamboo handles.&#x27;,
+    price: 28.0,
+    stock: 15,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1593618998160-e34014e67546?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Silicone Gripping Mat&#x27;,
+    category: &#x27;Cutting&#x27;,
+    description: &#x27;Non-slip mat for stable chopping – rolls up for storage.&#x27;,
+    price: 11.0,
+    stock: 65,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1556911220-bff31c812dba?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Wooden Salad Bowl&#x27;,
+    category: &#x27;Cutting&#x27;,
+    description: &#x27;Acacia wood bowl for prepping and serving salads.&#x27;,
+    price: 14.5,
+    stock: 35,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1547928576-d6a59a2e2f3e?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Herb Scissors&#x27;,
+    category: &#x27;Cutting&#x27;,
+    description: &#x27;Stainless steel scissors for quick herb chopping.&#x27;,
+    price: 8.5,
+    stock: 80,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1464226184884-fa280b87c399?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Peeler Set&#x27;,
+    category: &#x27;Cutting&#x27;,
+    description: &#x27;Ergonomic bamboo-handled peelers for veggies and fruits.&#x27;,
+    price: 7.0,
+    stock: 70,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  // Serveware (6 products)
+  {
+    name: &#x27;Bamboo Serving Platter&#x27;,
+    category: &#x27;Serveware&#x27;,
+    description: &#x27;Elegant bamboo platter for appetizers and mains.&#x27;,
+    price: 17.0,
+    stock: 40,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1606923829579-0cb981a83e2e?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Compostable Napkins Pack&#x27;,
+    category: &#x27;Serveware&#x27;,
+    description: &#x27;Unbleached bamboo fiber napkins – fully compostable.&#x27;,
+    price: 5.0,
+    stock: 100,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Ceramic Serving Bowl&#x27;,
+    category: &#x27;Serveware&#x27;,
+    description: &#x27;Glazed ceramic bowl from sustainable clay sources.&#x27;,
+    price: 21.0,
+    stock: 20,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1578916171728-46686eac8d58?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Wooden Cheese Board&#x27;,
+    category: &#x27;Serveware&#x27;,
+    description: &#x27;Olive wood board with natural oils for cheese serving.&#x27;,
+    price: 24.0,
+    stock: 18,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1452251889946-8ff5ea7f27f3?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Silicone Trivet Set&#x27;,
+    category: &#x27;Serveware&#x27;,
+    description: &#x27;Heat-resistant trivets protect tables from hot dishes.&#x27;,
+    price: 10.5,
+    stock: 50,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1556911220-bff31c812dba?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+  {
+    name: &#x27;Bamboo Coasters (Set of 6)&#x27;,
+    category: &#x27;Serveware&#x27;,
+    description: &#x27;Engraved bamboo coasters – absorbent and stylish.&#x27;,
+    price: 9.0,
+    stock: 75,
+    imageUrl:
+      &#x27;https://images.unsplash.com/photo-1577705998148-6da4f3963bc8?w&#x3D;400&amp;h&#x3D;400&amp;fit&#x3D;crop&#x27;,
+  },
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
