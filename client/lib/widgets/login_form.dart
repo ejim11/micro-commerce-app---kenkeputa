@@ -1,8 +1,6 @@
-import "package:client/models/auth_model.dart";
 import "package:client/providers/auth_provider.dart";
 import "package:client/screens/home/home_screen.dart";
 import "package:flutter/material.dart";
-import "package:client/services/auth_service.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
 
 class LoginForm extends ConsumerStatefulWidget {
@@ -28,11 +26,18 @@ class _LoginFormState extends ConsumerState<LoginForm> {
       _isLoading = true;
     });
 
+    // Call the async login method
+    _performLogin();
+  }
+
+  Future<void> _performLogin() async {
     try {
-      final result = await AuthService.loginUser(
-        email: _emailController.text.trim(),
-        password: _passwordController.text,
-      );
+      final result = await ref
+          .read(authProvider.notifier)
+          .login(
+            email: _emailController.text.trim(),
+            password: _passwordController.text,
+          );
 
       setState(() {
         _isLoading = false;
@@ -41,14 +46,10 @@ class _LoginFormState extends ConsumerState<LoginForm> {
       if (!mounted) return;
 
       if (result['success']) {
-        print(result);
-        final authData = AuthData.fromJson(result['data']['data']);
-        await ref.read(authProvider.notifier).setAuthData(authData);
-
         // Show success message
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(result['message']),
+            content: Text(result['message'] ?? 'Login successful'),
             backgroundColor: Colors.green,
           ),
         );
@@ -62,7 +63,7 @@ class _LoginFormState extends ConsumerState<LoginForm> {
         // Show error message
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(result['message']),
+            content: Text(result['message'] ?? 'Login failed'),
             backgroundColor: Colors.red,
             duration: const Duration(seconds: 4),
           ),
