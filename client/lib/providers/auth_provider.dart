@@ -1,3 +1,4 @@
+import 'package:client/services/auth_service.dart';
 import 'package:flutter_riverpod/legacy.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
@@ -24,8 +25,36 @@ class AuthNotifier extends StateNotifier<AuthData?> {
     }
   }
 
-  // Save auth data after login
-  Future<void> setAuthData(AuthData authData) async {
+  // Login user - NEW METHOD
+  Future<Map<String, dynamic>> login({
+    required String email,
+    required String password,
+  }) async {
+    try {
+      // Call the auth service
+      final result = await AuthService.loginUser(
+        email: email,
+        password: password,
+      );
+
+      // If login is successful, save auth data
+      if (result['success']) {
+        final authData = AuthData.fromJson(result['data']['data']);
+        await _saveAuthData(authData);
+      }
+
+      return result;
+    } catch (e) {
+      return {
+        'success': false,
+        'message': 'An unexpected error occurred. Please try again.',
+        'error': e.toString(),
+      };
+    }
+  }
+
+  // Private method to save auth data
+  Future<void> _saveAuthData(AuthData authData) async {
     try {
       final prefs = await SharedPreferences.getInstance();
       final authDataString = jsonEncode(authData.toJson());
@@ -33,7 +62,13 @@ class AuthNotifier extends StateNotifier<AuthData?> {
       state = authData;
     } catch (e) {
       print('Error saving auth data: $e');
+      rethrow;
     }
+  }
+
+  // Save auth data after login - UPDATED (now just calls private method)
+  Future<void> setAuthData(AuthData authData) async {
+    await _saveAuthData(authData);
   }
 
   // Clear auth data on logout
