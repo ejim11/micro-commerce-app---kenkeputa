@@ -1,3 +1,5 @@
+import 'package:client/models/product_model.dart';
+import 'package:client/screens/product/product_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:client/providers/product_provider.dart';
@@ -119,7 +121,7 @@ class _ProductsScreenState extends ConsumerState<ProductsScreen> {
           padding: const EdgeInsets.all(12),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: 0.7,
+            childAspectRatio: 0.655,
             crossAxisSpacing: 12,
             mainAxisSpacing: 12,
           ),
@@ -145,7 +147,7 @@ class _ProductsScreenState extends ConsumerState<ProductsScreen> {
 }
 
 class ProductCard extends StatelessWidget {
-  final product;
+  final Product product;
 
   const ProductCard({super.key, required this.product});
 
@@ -157,13 +159,19 @@ class ProductCard extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: InkWell(
         onTap: () {
-          // Navigate to product details
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (ctx) => ProductDetailScreen(product: product),
-          //   ),
-          // );
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (ctx) => ProductDetailScreen(
+                productId: product.id,
+                productImage: product.imageUrl,
+                productName: product.name,
+                category: product.category,
+                price: product.priceAsDouble,
+                description: product.description,
+              ),
+            ),
+          );
         },
         borderRadius: BorderRadius.circular(12),
         child: Column(
@@ -174,22 +182,25 @@ class ProductCard extends StatelessWidget {
               borderRadius: const BorderRadius.vertical(
                 top: Radius.circular(12),
               ),
-              child: Image.network(
-                product.imageUrl,
-                height: 140,
-                width: double.infinity,
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) {
-                  return Container(
-                    height: 140,
-                    color: Colors.grey[300],
-                    child: const Icon(
-                      Icons.image_not_supported,
-                      size: 50,
-                      color: Colors.grey,
-                    ),
-                  );
-                },
+              child: Hero(
+                tag: product.name,
+                child: Image.network(
+                  product.imageUrl,
+                  height: 140,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) {
+                    return Container(
+                      height: 140,
+                      color: Colors.grey[300],
+                      child: const Icon(
+                        Icons.image_not_supported,
+                        size: 50,
+                        color: Colors.grey,
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
             Expanded(
@@ -229,6 +240,7 @@ class ProductCard extends StatelessWidget {
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
+                    Spacer(),
                     // const SizedBox(height: 10),
                     // Price and Stock
                     Row(
@@ -236,7 +248,7 @@ class ProductCard extends StatelessWidget {
                       children: [
                         Text(
                           // '\${product.price}',
-                          '\$900',
+                          '\$${product.price}',
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
