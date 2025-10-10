@@ -146,7 +146,10 @@
                             </li>
                             <li>
                                     <span class="modifier"></span>
-                                    <span class="modifier">Async</span>
+                                <a href="#clearUserCart" >clearUserCart</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
                                 <a href="#decrementQuantity" >decrementQuantity</a>
                             </li>
                             <li>
@@ -155,7 +158,6 @@
                             </li>
                             <li>
                                     <span class="modifier"></span>
-                                    <span class="modifier">Async</span>
                                 <a href="#removeFromCart" >removeFromCart</a>
                             </li>
                         </ul>
@@ -204,8 +206,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="24"
-                                    class="link-to-prism">src/cart/cart.controller.ts:24</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="31"
+                                    class="link-to-prism">src/cart/cart.controller.ts:31</a></div>
                         </td>
                     </tr>
 
@@ -267,10 +269,85 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="clearUserCart"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>clearUserCart</b></span>
+                        <a href="#clearUserCart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>clearUserCart(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Delete(&#x27;clear&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="25"
+                                    class="link-to-prism">src/cart/cart.controller.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="decrementQuantity"></a>
                     <span class="name">
                             <span class="modifier"></span>
-                            <span class="modifier">Async</span>
                         <span ><b>decrementQuantity</b></span>
                         <a href="#decrementQuantity"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -279,7 +356,7 @@
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>decrementQuantity(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, productId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    <code>decrementQuantity(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, cartId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, updateCartItemDto: <a href="../classes/UpdateCartItemDto.html" target="_self">UpdateCartItemDto</a>)</code>
                 </td>
             </tr>
 
@@ -287,14 +364,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Patch(&#x27;:productId&#x27;)<br /></code>
+                    <code>@Patch(&#x27;:cartId&#x27;)<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="42"
-                                    class="link-to-prism">src/cart/cart.controller.ts:42</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="49"
+                                    class="link-to-prism">src/cart/cart.controller.ts:49</a></div>
                         </td>
                     </tr>
 
@@ -327,9 +404,21 @@
 
                                         </tr>
                                         <tr>
-                                                <td>productId</td>
+                                                <td>cartId</td>
                                             <td>
                                                             <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>updateCartItemDto</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateCartItemDto.html" target="_self" >UpdateCartItemDto</a></code>
                                             </td>
 
                                             <td>
@@ -342,7 +431,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>    <code>unknown</code>
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                         </div>
                             <div class="io-description">
@@ -381,8 +470,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="29"
-                                    class="link-to-prism">src/cart/cart.controller.ts:29</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="36"
+                                    class="link-to-prism">src/cart/cart.controller.ts:36</a></div>
                         </td>
                     </tr>
 
@@ -435,7 +524,6 @@
                     <a name="removeFromCart"></a>
                     <span class="name">
                             <span class="modifier"></span>
-                            <span class="modifier">Async</span>
                         <span ><b>removeFromCart</b></span>
                         <a href="#removeFromCart"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -444,7 +532,7 @@
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>removeFromCart(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, productId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    <code>removeFromCart(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, cartId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -452,14 +540,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Delete(&#x27;:productId&#x27;)<br /></code>
+                    <code>@Delete(&#x27;:cartId&#x27;)<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="34"
-                                    class="link-to-prism">src/cart/cart.controller.ts:34</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="41"
+                                    class="link-to-prism">src/cart/cart.controller.ts:41</a></div>
                         </td>
                     </tr>
 
@@ -492,7 +580,7 @@
 
                                         </tr>
                                         <tr>
-                                                <td>productId</td>
+                                                <td>cartId</td>
                                             <td>
                                                             <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                             </td>
@@ -507,7 +595,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>    <code>unknown</code>
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                         </div>
                             <div class="io-description">
@@ -533,6 +621,7 @@
 import { CartService } from &#x27;./providers/cart.service&#x27;;
 import { ActiveUser } from &#x27;src/auth/decorator/active-user.decorator&#x27;;
 import { CreateCartItemDto } from &#x27;./dtos/create-cart-item.dto&#x27;;
+import { UpdateCartItemDto } from &#x27;./dtos/update-cart-item.dto&#x27;;
 
 @Controller(&#x27;cart&#x27;)
 export class CartController {
@@ -542,6 +631,12 @@ export class CartController {
      */
     private readonly cartService: CartService,
   ) {}
+
+  @Delete(&#x27;clear&#x27;)
+  clearUserCart(@ActiveUser(&#x27;sub&#x27;) userId: string) {
+    console.log(&#x27;clearing...&#x27;);
+    return this.cartService.clearCart(userId);
+  }
 
   @Post(&#x27;&#x27;)
   addToCart(@ActiveUser(&#x27;sub&#x27;) userId: string, @Body() dto: CreateCartItemDto) {
@@ -553,20 +648,26 @@ export class CartController {
     return this.cartService.getCart(userId);
   }
 
-  @Delete(&#x27;:productId&#x27;)
-  async removeFromCart(
+  @Delete(&#x27;:cartId&#x27;)
+  removeFromCart(
     @ActiveUser(&#x27;sub&#x27;) userId: string,
-    @Param(&#x27;productId&#x27;) productId: string,
+    @Param(&#x27;cartId&#x27;) cartId: string,
   ) {
-    return this.cartService.removeCartItem(userId, productId);
+    return this.cartService.removeCartItem(userId, cartId);
   }
 
-  @Patch(&#x27;:productId&#x27;)
-  async decrementQuantity(
+  @Patch(&#x27;:cartId&#x27;)
+  decrementQuantity(
     @ActiveUser(&#x27;sub&#x27;) userId: string,
-    @Param(&#x27;productId&#x27;) productId: string,
+    @Param(&#x27;cartId&#x27;) cartId: string,
+    @Body() updateCartItemDto: UpdateCartItemDto,
   ) {
-    return this.cartService.decrementQuantity(userId, productId);
+    console.log(&#x27;qty&#x27;, updateCartItemDto.quantity);
+    return this.cartService.decrementQuantity(
+      userId,
+      cartId,
+      updateCartItemDto,
+    );
   }
 }
 </code></pre>

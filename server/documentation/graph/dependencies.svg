@@ -32,42 +32,6 @@
 <title>cluster_AppModule_providers</title>
 <polygon fill="none" stroke="black" points="1340,-366 1340,-418 1470,-418 1470,-366 1340,-366"/>
 </g>
-<g id="clust7" class="cluster">
-<title>cluster_AuthModule</title>
-<polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-138 8,-206 688,-206 688,-138 8,-138"/>
-</g>
-<g id="clust10" class="cluster">
-<title>cluster_AuthModule_exports</title>
-<polygon fill="none" stroke="black" points="550,-146 550,-198 680,-198 680,-146 550,-146"/>
-</g>
-<g id="clust12" class="cluster">
-<title>cluster_AuthModule_providers</title>
-<polygon fill="none" stroke="black" points="16,-146 16,-198 542,-198 542,-146 16,-146"/>
-</g>
-<g id="clust13" class="cluster">
-<title>cluster_CartModule</title>
-<polygon fill="none" stroke="black" stroke-dasharray="1,5" points="1834,-214 1834,-282 2765,-282 2765,-214 1834,-214"/>
-</g>
-<g id="clust15" class="cluster">
-<title>cluster_CartModule_imports</title>
-<polygon fill="none" stroke="black" points="2681,-222 2681,-274 2757,-274 2757,-222 2681,-222"/>
-</g>
-<g id="clust16" class="cluster">
-<title>cluster_CartModule_exports</title>
-<polygon fill="none" stroke="black" points="2571,-222 2571,-274 2673,-274 2673,-222 2571,-222"/>
-</g>
-<g id="clust18" class="cluster">
-<title>cluster_CartModule_providers</title>
-<polygon fill="none" stroke="black" points="1842,-222 1842,-274 2563,-274 2563,-222 1842,-222"/>
-</g>
-<g id="clust19" class="cluster">
-<title>cluster_OrdersModule</title>
-<polygon fill="none" stroke="black" stroke-dasharray="1,5" points="450,-290 450,-358 1324,-358 1324,-290 450,-290"/>
-</g>
-<g id="clust24" class="cluster">
-<title>cluster_OrdersModule_providers</title>
-<polygon fill="none" stroke="black" points="458,-298 458,-350 1316,-350 1316,-298 458,-298"/>
-</g>
 <g id="clust25" class="cluster">
 <title>cluster_PaginationModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="3090,-70 3090,-282 3294,-282 3294,-70 3090,-70"/>
@@ -79,6 +43,14 @@
 <g id="clust30" class="cluster">
 <title>cluster_PaginationModule_providers</title>
 <polygon fill="none" stroke="black" points="3098,-78 3098,-130 3286,-130 3286,-78 3098,-78"/>
+</g>
+<g id="clust19" class="cluster">
+<title>cluster_OrdersModule</title>
+<polygon fill="none" stroke="black" stroke-dasharray="1,5" points="450,-290 450,-358 1324,-358 1324,-290 450,-290"/>
+</g>
+<g id="clust24" class="cluster">
+<title>cluster_OrdersModule_providers</title>
+<polygon fill="none" stroke="black" points="458,-298 458,-350 1316,-350 1316,-298 458,-298"/>
 </g>
 <g id="clust31" class="cluster">
 <title>cluster_ProductsModule</title>
@@ -104,6 +76,34 @@
 <title>cluster_UsersModule_providers</title>
 <polygon fill="none" stroke="black" points="2157,-146 2157,-198 2956,-198 2956,-146 2157,-146"/>
 </g>
+<g id="clust13" class="cluster">
+<title>cluster_CartModule</title>
+<polygon fill="none" stroke="black" stroke-dasharray="1,5" points="1834,-214 1834,-282 2765,-282 2765,-214 1834,-214"/>
+</g>
+<g id="clust16" class="cluster">
+<title>cluster_CartModule_exports</title>
+<polygon fill="none" stroke="black" points="2655,-222 2655,-274 2757,-274 2757,-222 2655,-222"/>
+</g>
+<g id="clust15" class="cluster">
+<title>cluster_CartModule_imports</title>
+<polygon fill="none" stroke="black" points="2571,-222 2571,-274 2647,-274 2647,-222 2571,-222"/>
+</g>
+<g id="clust18" class="cluster">
+<title>cluster_CartModule_providers</title>
+<polygon fill="none" stroke="black" points="1842,-222 1842,-274 2563,-274 2563,-222 1842,-222"/>
+</g>
+<g id="clust7" class="cluster">
+<title>cluster_AuthModule</title>
+<polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-138 8,-206 688,-206 688,-138 8,-138"/>
+</g>
+<g id="clust12" class="cluster">
+<title>cluster_AuthModule_providers</title>
+<polygon fill="none" stroke="black" points="154,-146 154,-198 680,-198 680,-146 154,-146"/>
+</g>
+<g id="clust10" class="cluster">
+<title>cluster_AuthModule_exports</title>
+<polygon fill="none" stroke="black" points="16,-146 16,-198 146,-198 146,-146 16,-146"/>
+</g>
 <!-- AuthModule -->
 <g id="node1" class="node">
 <title>AuthModule</title>
@@ -125,14 +125,14 @@
 <!-- HashingProvider  -->
 <g id="node8" class="node">
 <title>HashingProvider </title>
-<polygon fill="#fb8072" stroke="black" points="672.37,-190 557.63,-190 557.63,-154 672.37,-154 672.37,-190"/>
-<text text-anchor="middle" x="615" y="-167.8" font-family="Times,serif" font-size="14.00">HashingProvider </text>
+<polygon fill="#fb8072" stroke="black" points="138.37,-190 23.63,-190 23.63,-154 138.37,-154 138.37,-190"/>
+<text text-anchor="middle" x="81" y="-167.8" font-family="Times,serif" font-size="14.00">HashingProvider </text>
 </g>
 <!-- AuthModule&#45;&gt;HashingProvider  -->
 <g id="edge7" class="edge">
 <title>AuthModule&#45;&gt;HashingProvider </title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1486.37,-238C1308.08,-238 644.18,-238 644.18,-238 644.18,-238 644.18,-200.03 644.18,-200.03"/>
-<polygon fill="black" stroke="black" points="647.68,-200.03 644.18,-190.03 640.68,-200.03 647.68,-200.03"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1486.24,-259C1244.27,-259 81,-259 81,-259 81,-259 81,-200.03 81,-200.03"/>
+<polygon fill="black" stroke="black" points="84.5,-200.03 81,-190.03 77.5,-200.03 84.5,-200.03"/>
 </g>
 <!-- CartModule -->
 <g id="node2" class="node">
@@ -161,14 +161,14 @@
 <!-- CartService  -->
 <g id="node13" class="node">
 <title>CartService </title>
-<polygon fill="#fb8072" stroke="black" points="2664.58,-266 2579.42,-266 2579.42,-230 2664.58,-230 2664.58,-266"/>
-<text text-anchor="middle" x="2622" y="-243.8" font-family="Times,serif" font-size="14.00">CartService </text>
+<polygon fill="#fb8072" stroke="black" points="2748.58,-266 2663.42,-266 2663.42,-230 2748.58,-230 2748.58,-266"/>
+<text text-anchor="middle" x="2706" y="-243.8" font-family="Times,serif" font-size="14.00">CartService </text>
 </g>
 <!-- CartModule&#45;&gt;CartService  -->
 <g id="edge14" class="edge">
 <title>CartModule&#45;&gt;CartService </title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1797.77,-332C1970.76,-332 2622,-332 2622,-332 2622,-332 2622,-276.23 2622,-276.23"/>
-<polygon fill="black" stroke="black" points="2625.5,-276.23 2622,-266.23 2618.5,-276.23 2625.5,-276.23"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1797.74,-337C1981.09,-337 2706,-337 2706,-337 2706,-337 2706,-276.01 2706,-276.01"/>
+<polygon fill="black" stroke="black" points="2709.5,-276.01 2706,-266.01 2702.5,-276.01 2709.5,-276.01"/>
 </g>
 <!-- OrdersModule&#45;&gt;AppModule -->
 <g id="edge3" class="edge">
@@ -251,50 +251,50 @@
 <!-- AuthService -->
 <g id="node9" class="node">
 <title>AuthService</title>
-<ellipse fill="#fdb462" stroke="black" cx="317" cy="-172" rx="59.11" ry="18"/>
-<text text-anchor="middle" x="317" y="-167.8" font-family="Times,serif" font-size="14.00">AuthService</text>
+<ellipse fill="#fdb462" stroke="black" cx="455" cy="-172" rx="59.11" ry="18"/>
+<text text-anchor="middle" x="455" y="-167.8" font-family="Times,serif" font-size="14.00">AuthService</text>
 </g>
 <!-- AuthService&#45;&gt;AuthModule -->
 <g id="edge8" class="edge">
 <title>AuthService&#45;&gt;AuthModule</title>
-<path fill="none" stroke="black" d="M317,-190.15C317,-213.76 317,-252 317,-252 317,-252 1476.11,-252 1476.11,-252"/>
-<polygon fill="black" stroke="black" points="1476.11,-255.5 1486.11,-252 1476.11,-248.5 1476.11,-255.5"/>
+<path fill="none" stroke="black" d="M490.02,-186.77C490.02,-208.1 490.02,-245 490.02,-245 490.02,-245 1476.31,-245 1476.31,-245"/>
+<polygon fill="black" stroke="black" points="1476.31,-248.5 1486.31,-245 1476.31,-241.5 1476.31,-248.5"/>
 </g>
 <!-- GenerateTokensProvider -->
 <g id="node10" class="node">
 <title>GenerateTokensProvider</title>
-<ellipse fill="#fdb462" stroke="black" cx="132" cy="-172" rx="107.63" ry="18"/>
-<text text-anchor="middle" x="132" y="-167.8" font-family="Times,serif" font-size="14.00">GenerateTokensProvider</text>
+<ellipse fill="#fdb462" stroke="black" cx="270" cy="-172" rx="107.63" ry="18"/>
+<text text-anchor="middle" x="270" y="-167.8" font-family="Times,serif" font-size="14.00">GenerateTokensProvider</text>
 </g>
 <!-- GenerateTokensProvider&#45;&gt;AuthModule -->
 <g id="edge9" class="edge">
 <title>GenerateTokensProvider&#45;&gt;AuthModule</title>
-<path fill="none" stroke="black" d="M132,-190.03C132,-215.51 132,-259 132,-259 132,-259 1476.24,-259 1476.24,-259"/>
-<polygon fill="black" stroke="black" points="1476.24,-262.5 1486.24,-259 1476.24,-255.5 1476.24,-262.5"/>
+<path fill="none" stroke="black" d="M270,-190.15C270,-213.76 270,-252 270,-252 270,-252 1476.26,-252 1476.26,-252"/>
+<polygon fill="black" stroke="black" points="1476.26,-255.5 1486.26,-252 1476.26,-248.5 1476.26,-255.5"/>
 </g>
 <!-- SignInProvider -->
 <g id="node11" class="node">
 <title>SignInProvider</title>
-<ellipse fill="#fdb462" stroke="black" cx="464" cy="-172" rx="70.08" ry="18"/>
-<text text-anchor="middle" x="464" y="-167.8" font-family="Times,serif" font-size="14.00">SignInProvider</text>
+<ellipse fill="#fdb462" stroke="black" cx="602" cy="-172" rx="70.08" ry="18"/>
+<text text-anchor="middle" x="602" y="-167.8" font-family="Times,serif" font-size="14.00">SignInProvider</text>
 </g>
 <!-- SignInProvider&#45;&gt;AuthModule -->
 <g id="edge10" class="edge">
 <title>SignInProvider&#45;&gt;AuthModule</title>
-<path fill="none" stroke="black" d="M499.89,-187.48C499.89,-208.91 499.89,-245 499.89,-245 499.89,-245 1476.4,-245 1476.4,-245"/>
-<polygon fill="black" stroke="black" points="1476.4,-248.5 1486.4,-245 1476.4,-241.5 1476.4,-248.5"/>
+<path fill="none" stroke="black" d="M644.11,-186.65C644.11,-206.09 644.11,-238 644.11,-238 644.11,-238 1476.37,-238 1476.37,-238"/>
+<polygon fill="black" stroke="black" points="1476.37,-241.5 1486.37,-238 1476.37,-234.5 1476.37,-241.5"/>
 </g>
 <!-- Product -->
 <g id="node12" class="node">
 <title>Product</title>
-<polygon fill="#8dd3c7" stroke="black" points="2748.55,-266 2745.55,-270 2724.55,-270 2721.55,-266 2689.45,-266 2689.45,-230 2748.55,-230 2748.55,-266"/>
-<text text-anchor="middle" x="2719" y="-243.8" font-family="Times,serif" font-size="14.00">Product</text>
+<polygon fill="#8dd3c7" stroke="black" points="2638.55,-266 2635.55,-270 2614.55,-270 2611.55,-266 2579.45,-266 2579.45,-230 2638.55,-230 2638.55,-266"/>
+<text text-anchor="middle" x="2609" y="-243.8" font-family="Times,serif" font-size="14.00">Product</text>
 </g>
 <!-- Product&#45;&gt;CartModule -->
 <g id="edge11" class="edge">
 <title>Product&#45;&gt;CartModule</title>
-<path fill="none" stroke="black" d="M2719,-266.01C2719,-292.02 2719,-337 2719,-337 2719,-337 1807.69,-337 1807.69,-337"/>
-<polygon fill="black" stroke="black" points="1807.69,-333.5 1797.69,-337 1807.69,-340.5 1807.69,-333.5"/>
+<path fill="none" stroke="black" d="M2609,-266.23C2609,-290.93 2609,-332 2609,-332 2609,-332 1807.72,-332 1807.72,-332"/>
+<polygon fill="black" stroke="black" points="1807.72,-328.5 1797.72,-332 1807.72,-335.5 1807.72,-328.5"/>
 </g>
 <!-- AddToCartProvider -->
 <g id="node14" class="node">
@@ -545,7 +545,7 @@
 <!-- UsersService&#45;&gt;UsersModule -->
 <g id="edge38" class="edge">
 <title>UsersService&#45;&gt;UsersModule</title>
-<path fill="none" stroke="black" d="M2635.41,-187.48C2635.41,-197.62 2635.41,-209 2635.41,-209 2635.41,-209 1799.76,-209 1799.76,-209 1799.76,-209 1799.76,-219.87 1799.76,-219.87"/>
+<path fill="none" stroke="black" d="M2622.4,-184.53C2622.4,-195.26 2622.4,-209 2622.4,-209 2622.4,-209 1799.76,-209 1799.76,-209 1799.76,-209 1799.76,-219.87 1799.76,-219.87"/>
 <polygon fill="black" stroke="black" points="1796.26,-219.87 1799.76,-229.87 1803.26,-219.87 1796.26,-219.87"/>
 </g>
 </g>
