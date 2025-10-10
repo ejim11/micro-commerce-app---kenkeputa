@@ -386,8 +386,6 @@ export class AddToCartProvider {
       },
     });
 
-    console.log(createCartItemDto.quantity);
-
     if (cartItem) {
       cartItem.quantity +&#x3D; createCartItemDto.quantity;
     } else {
