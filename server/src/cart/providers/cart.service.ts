@@ -3,6 +3,7 @@ import { AddToCartProvider } from './add-to-cart.provider';
 import { CreateCartItemDto } from '../dtos/create-cart-item.dto';
 import { GetCartProvider } from './get-cart.provider';
 import { UpdateCartItemProvider } from './update-cart-item.provider';
+import { UpdateCartItemDto } from '../dtos/update-cart-item.dto';
 
 @Injectable()
 export class CartService {
@@ -31,14 +32,19 @@ export class CartService {
     return await this.getCartProvider.getCart(userId);
   }
 
-  async removeCartItem(userId: string, productId: string) {
-    return await this.updateCartItemProvider.removeFromCart(userId, productId);
+  async removeCartItem(userId: string, cartId: string) {
+    return await this.updateCartItemProvider.removeFromCart(userId, cartId);
   }
 
-  async decrementQuantity(userId: string, productId: string) {
+  async decrementQuantity(
+    userId: string,
+    cartId: string,
+    updateCartItemDto: UpdateCartItemDto,
+  ) {
     return await this.updateCartItemProvider.decrementQuantity(
       userId,
-      productId,
+      cartId,
+      updateCartItemDto,
     );
   }
 

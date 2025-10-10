@@ -9,6 +9,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Cart } from '../interfaces/cart.interface';
 import { GetCartProvider } from './get-cart.provider';
 import { Product } from 'src/products/product.entity';
+import { UpdateCartItemDto } from '../dtos/update-cart-item.dto';
 
 @Injectable()
 export class UpdateCartItemProvider {
@@ -28,28 +29,35 @@ export class UpdateCartItemProvider {
     private readonly productRepository: Repository<Product>,
   ) {}
 
-  async decrementQuantity(userId: string, productId: string): Promise<Cart> {
+  async decrementQuantity(
+    userId: string,
+    cartId: string,
+    updateCartItemDto: UpdateCartItemDto,
+  ): Promise<Cart> {
     const cartItem = await this.cartItemRepository.findOne({
-      where: { user: { id: userId }, product: { id: productId } },
+      where: { user: { id: userId }, id: cartId },
     });
 
     if (!cartItem) {
       throw new NotFoundException('Item not in cart');
     }
 
-    if (cartItem.quantity <= 1) {
+    if (
+      cartItem.quantity <= 1 ||
+      cartItem.quantity === updateCartItemDto.quantity
+    ) {
       // Optionally remove if reaches 0, or just set to 1
-      return this.removeFromCart(userId, productId);
+      return this.removeFromCart(userId, cartId);
     }
 
-    cartItem.quantity -= 1; // Subtract 1
+    cartItem.quantity -= updateCartItemDto.quantity;
     await this.cartItemRepository.save(cartItem);
     return this.getCartProvider.getCart(userId);
   }
 
-  async removeFromCart(userId: string, productId: string): Promise<Cart> {
+  async removeFromCart(userId: string, cartId: string): Promise<Cart> {
     const cartItem = await this.cartItemRepository.findOne({
-      where: { user: { id: userId }, product: { id: productId } },
+      where: { user: { id: userId }, id: cartId },
     });
 
     if (!cartItem) {
@@ -90,12 +98,11 @@ export class UpdateCartItemProvider {
   }
 
   // Clear cart after order
-  async clearCart(userId: string): Promise<void> {
-    await this.cartItemRepository.update(
-      { user: { id: userId } },
-      {
-        deletedAt: new Date(),
-      },
-    );
+  async clearCart(userId: string): Promise<{ message: string }> {
+    await this.cartItemRepository.softDelete({ user: { id: userId } });
+
+    return {
+      message: 'Cart cleared successfully',
+    };
   }
 }
