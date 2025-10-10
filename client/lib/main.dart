@@ -74,7 +74,7 @@ class MyApp extends ConsumerWidget {
         '/home': (context) => const HomeScreen(),
       },
       // choosing theme based of the systems theme
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
     );
   }
 }
