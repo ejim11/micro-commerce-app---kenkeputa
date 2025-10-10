@@ -10,6 +10,7 @@ import {
 import { CartService } from './providers/cart.service';
 import { ActiveUser } from 'src/auth/decorator/active-user.decorator';
 import { CreateCartItemDto } from './dtos/create-cart-item.dto';
+import { UpdateCartItemDto } from './dtos/update-cart-item.dto';
 
 @Controller('cart')
 export class CartController {
@@ -19,6 +20,12 @@ export class CartController {
      */
     private readonly cartService: CartService,
   ) {}
+
+  @Delete('clear')
+  clearUserCart(@ActiveUser('sub') userId: string) {
+    console.log('clearing...');
+    return this.cartService.clearCart(userId);
+  }
 
   @Post('')
   addToCart(@ActiveUser('sub') userId: string, @Body() dto: CreateCartItemDto) {
@@ -30,19 +37,25 @@ export class CartController {
     return this.cartService.getCart(userId);
   }
 
-  @Delete(':productId')
-  async removeFromCart(
+  @Delete(':cartId')
+  removeFromCart(
     @ActiveUser('sub') userId: string,
-    @Param('productId') productId: string,
+    @Param('cartId') cartId: string,
   ) {
-    return this.cartService.removeCartItem(userId, productId);
+    return this.cartService.removeCartItem(userId, cartId);
   }
 
-  @Patch(':productId')
-  async decrementQuantity(
+  @Patch(':cartId')
+  decrementQuantity(
     @ActiveUser('sub') userId: string,
-    @Param('productId') productId: string,
+    @Param('cartId') cartId: string,
+    @Body() updateCartItemDto: UpdateCartItemDto,
   ) {
-    return this.cartService.decrementQuantity(userId, productId);
+    console.log('qty', updateCartItemDto.quantity);
+    return this.cartService.decrementQuantity(
+      userId,
+      cartId,
+      updateCartItemDto,
+    );
   }
 }
