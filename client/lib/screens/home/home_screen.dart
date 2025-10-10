@@ -1,6 +1,6 @@
 import 'package:client/screens/home/cart_screen.dart';
 import 'package:client/screens/home/orders_screen.dart';
-import 'package:client/screens/home/product_screen.dart';
+import 'package:client/screens/home/products_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:client/providers/auth_provider.dart';
@@ -35,10 +35,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
     // Navigate to login screen
     Navigator.pushReplacementNamed(context, '/login');
-    // Or use: Navigator.pushReplacement(
-    //   context,
-    //   MaterialPageRoute(builder: (ctx) => const Login()),
-    // );
   }
 
   @override
