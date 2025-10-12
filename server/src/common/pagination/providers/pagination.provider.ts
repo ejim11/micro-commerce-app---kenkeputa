@@ -44,6 +44,7 @@ export class PaginationProvider {
       relations: options.relations,
       select: options.select,
       where: options.where,
+      order: options.order,
     });
 
     /**
