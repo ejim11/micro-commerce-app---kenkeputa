@@ -61,8 +61,6 @@ export class CreateOrderProvider {
         throw new ConflictException('Cart is empty');
       }
 
-      console.log(cartItems);
-
       for (const item of cartItems) {
         if (item.stock < item.quantity) {
           throw new ConflictException(
@@ -70,7 +68,6 @@ export class CreateOrderProvider {
           );
         }
       }
-
       const subtotal = cartItems.reduce(
         (sum, item) => sum + item.price * item.quantity,
         0,
@@ -95,12 +92,16 @@ export class CreateOrderProvider {
       await queryRunner.manager.getRepository(OrderItem).save(orderItems);
 
       for (const item of cartItems) {
-        await queryRunner.manager
-          .getRepository(Product)
-          .decrement({ id: item.productId }, 'stock', item.quantity);
+        await queryRunner.manager.getRepository(Product).update(
+          { id: item.productId },
+          {
+            stock: () => `stock - ${item.quantity}`,
+            purchaseCount: () => `"purchaseCount" + ${item.quantity}`,
+          },
+        );
       }
 
-      await this.cartService.clearCart(userId);
+      await queryRunner.manager.softDelete(CartItem, { user: { id: userId } });
 
       await queryRunner.commitTransaction(); // Don't forget to commit!
       return order;
