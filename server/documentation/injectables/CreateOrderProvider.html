@@ -354,8 +354,6 @@ export class CreateOrderProvider {
         .setLock(&#x27;pessimistic_write&#x27;)
         .getMany();
 
-      console.log(&#x27;1&#x27;);
-
       // Transform to the format you need
       const cartItems &#x3D; cartItemsRaw.map((ci) &#x3D;&gt; ({
         id: ci.id,
@@ -364,7 +362,6 @@ export class CreateOrderProvider {
         stock: ci.product.stock,
         price: ci.product.price,
       }));
-      console.log(&#x27;2&#x27;);
 
       if (cartItems.length &#x3D;&#x3D;&#x3D; 0) {
         throw new ConflictException(&#x27;Cart is empty&#x27;);
@@ -377,8 +374,6 @@ export class CreateOrderProvider {
           );
         }
       }
-      console.log(&#x27;3&#x27;);
-
       const subtotal &#x3D; cartItems.reduce(
         (sum, item) &#x3D;&gt; sum + item.price * item.quantity,
         0,
@@ -392,8 +387,6 @@ export class CreateOrderProvider {
       });
       await queryRunner.manager.getRepository(Order).save(order);
 
-      console.log(&#x27;4&#x27;);
-
       const orderItems &#x3D; cartItems.map((item) &#x3D;&gt;
         queryRunner.manager.getRepository(OrderItem).create({
           order,
@@ -403,7 +396,6 @@ export class CreateOrderProvider {
         }),
       );
       await queryRunner.manager.getRepository(OrderItem).save(orderItems);
-      console.log(&#x27;5&#x27;);
 
       for (const item of cartItems) {
         await queryRunner.manager.getRepository(Product).update(
@@ -415,15 +407,7 @@ export class CreateOrderProvider {
         );
       }
 
-      console.log(&#x27;6&#x27;);
-
       await queryRunner.manager.softDelete(CartItem, { user: { id: userId } });
-
-      // const x &#x3D; await this.cartService.clearCart(userId);
-
-      // console.log(x);
-
-      console.log(&#x27;7&#x27;);
 
       await queryRunner.commitTransaction(); // Don&#x27;t forget to commit!
       return order;

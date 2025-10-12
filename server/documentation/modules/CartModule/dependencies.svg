@@ -24,119 +24,119 @@
 <title>cluster_CartModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-70 8,-268 1065,-268 1065,-70 8,-70"/>
 </g>
-<g id="clust6" class="cluster">
-<title>cluster_CartModule_providers</title>
-<polygon fill="none" stroke="black" points="336,-78 336,-130 1057,-130 1057,-78 336,-78"/>
+<g id="clust4" class="cluster">
+<title>cluster_CartModule_exports</title>
+<polygon fill="none" stroke="black" points="590,-208 590,-260 692,-260 692,-208 590,-208"/>
 </g>
 <g id="clust3" class="cluster">
 <title>cluster_CartModule_imports</title>
-<polygon fill="none" stroke="black" points="16,-78 16,-130 328,-130 328,-78 16,-78"/>
+<polygon fill="none" stroke="black" points="745,-78 745,-130 1057,-130 1057,-78 745,-78"/>
 </g>
-<g id="clust4" class="cluster">
-<title>cluster_CartModule_exports</title>
-<polygon fill="none" stroke="black" points="399,-208 399,-260 501,-260 501,-208 399,-208"/>
+<g id="clust6" class="cluster">
+<title>cluster_CartModule_providers</title>
+<polygon fill="none" stroke="black" points="16,-78 16,-130 737,-130 737,-78 16,-78"/>
 </g>
 <!-- Product -->
 <g id="node1" class="node">
 <title>Product</title>
-<polygon fill="#8dd3c7" stroke="black" points="319.55,-122 316.55,-126 295.55,-126 292.55,-122 260.45,-122 260.45,-86 319.55,-86 319.55,-122"/>
-<text text-anchor="middle" x="290" y="-99.8" font-family="Times,serif" font-size="14.00">Product</text>
+<polygon fill="#8dd3c7" stroke="black" points="1048.55,-122 1045.55,-126 1024.55,-126 1021.55,-122 989.45,-122 989.45,-86 1048.55,-86 1048.55,-122"/>
+<text text-anchor="middle" x="1019" y="-99.8" font-family="Times,serif" font-size="14.00">Product</text>
 </g>
 <!-- CartModule -->
 <g id="node4" class="node">
 <title>CartModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="491.65,-187 488.65,-191 467.65,-191 464.65,-187 408.35,-187 408.35,-151 491.65,-151 491.65,-187"/>
-<text text-anchor="middle" x="450" y="-164.8" font-family="Times,serif" font-size="14.00">CartModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="682.65,-187 679.65,-191 658.65,-191 655.65,-187 599.35,-187 599.35,-151 682.65,-151 682.65,-187"/>
+<text text-anchor="middle" x="641" y="-164.8" font-family="Times,serif" font-size="14.00">CartModule</text>
 </g>
 <!-- Product&#45;&gt;CartModule -->
 <g id="edge1" class="edge">
 <title>Product&#45;&gt;CartModule</title>
-<path fill="none" stroke="black" d="M290,-122.03C290,-138.4 290,-160 290,-160 290,-160 397.96,-160 397.96,-160"/>
-<polygon fill="black" stroke="black" points="397.96,-163.5 407.96,-160 397.96,-156.5 397.96,-163.5"/>
+<path fill="none" stroke="black" d="M1019,-122.29C1019,-144.21 1019,-178 1019,-178 1019,-178 692.9,-178 692.9,-178"/>
+<polygon fill="black" stroke="black" points="692.9,-174.5 682.9,-178 692.9,-181.5 692.9,-174.5"/>
 </g>
 <!-- ProductsModule -->
 <g id="node2" class="node">
 <title>ProductsModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="242.04,-122 239.04,-126 218.04,-126 215.04,-122 133.96,-122 133.96,-86 242.04,-86 242.04,-122"/>
-<text text-anchor="middle" x="188" y="-99.8" font-family="Times,serif" font-size="14.00">ProductsModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="971.04,-122 968.04,-126 947.04,-126 944.04,-122 862.96,-122 862.96,-86 971.04,-86 971.04,-122"/>
+<text text-anchor="middle" x="917" y="-99.8" font-family="Times,serif" font-size="14.00">ProductsModule</text>
 </g>
 <!-- ProductsModule&#45;&gt;CartModule -->
 <g id="edge2" class="edge">
 <title>ProductsModule&#45;&gt;CartModule</title>
-<path fill="none" stroke="black" d="M188,-122.11C188,-141.34 188,-169 188,-169 188,-169 398.2,-169 398.2,-169"/>
-<polygon fill="black" stroke="black" points="398.2,-172.5 408.2,-169 398.2,-165.5 398.2,-172.5"/>
+<path fill="none" stroke="black" d="M917,-122.11C917,-141.34 917,-169 917,-169 917,-169 692.92,-169 692.92,-169"/>
+<polygon fill="black" stroke="black" points="692.92,-165.5 682.92,-169 692.92,-172.5 692.92,-165.5"/>
 </g>
 <!-- UsersModule -->
 <g id="node3" class="node">
 <title>UsersModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="115.92,-122 112.92,-126 91.92,-126 88.92,-122 24.08,-122 24.08,-86 115.92,-86 115.92,-122"/>
-<text text-anchor="middle" x="70" y="-99.8" font-family="Times,serif" font-size="14.00">UsersModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="844.92,-122 841.92,-126 820.92,-126 817.92,-122 753.08,-122 753.08,-86 844.92,-86 844.92,-122"/>
+<text text-anchor="middle" x="799" y="-99.8" font-family="Times,serif" font-size="14.00">UsersModule</text>
 </g>
 <!-- UsersModule&#45;&gt;CartModule -->
 <g id="edge3" class="edge">
 <title>UsersModule&#45;&gt;CartModule</title>
-<path fill="none" stroke="black" d="M70,-122.29C70,-144.21 70,-178 70,-178 70,-178 398.25,-178 398.25,-178"/>
-<polygon fill="black" stroke="black" points="398.25,-181.5 408.25,-178 398.25,-174.5 398.25,-181.5"/>
+<path fill="none" stroke="black" d="M799,-122.03C799,-138.4 799,-160 799,-160 799,-160 692.93,-160 692.93,-160"/>
+<polygon fill="black" stroke="black" points="692.93,-156.5 682.93,-160 692.93,-163.5 692.93,-156.5"/>
 </g>
 <!-- CartService  -->
 <g id="node5" class="node">
 <title>CartService </title>
-<polygon fill="#fb8072" stroke="black" points="492.58,-252 407.42,-252 407.42,-216 492.58,-216 492.58,-252"/>
-<text text-anchor="middle" x="450" y="-229.8" font-family="Times,serif" font-size="14.00">CartService </text>
+<polygon fill="#fb8072" stroke="black" points="683.58,-252 598.42,-252 598.42,-216 683.58,-216 683.58,-252"/>
+<text text-anchor="middle" x="641" y="-229.8" font-family="Times,serif" font-size="14.00">CartService </text>
 </g>
 <!-- CartModule&#45;&gt;CartService  -->
 <g id="edge4" class="edge">
 <title>CartModule&#45;&gt;CartService </title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M450,-187.11C450,-187.11 450,-205.99 450,-205.99"/>
-<polygon fill="black" stroke="black" points="446.5,-205.99 450,-215.99 453.5,-205.99 446.5,-205.99"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M641,-187.11C641,-187.11 641,-205.99 641,-205.99"/>
+<polygon fill="black" stroke="black" points="637.5,-205.99 641,-215.99 644.5,-205.99 637.5,-205.99"/>
 </g>
 <!-- AddToCartProvider -->
 <g id="node6" class="node">
 <title>AddToCartProvider</title>
-<ellipse fill="#fdb462" stroke="black" cx="961" cy="-104" rx="88.04" ry="18"/>
-<text text-anchor="middle" x="961" y="-99.8" font-family="Times,serif" font-size="14.00">AddToCartProvider</text>
+<ellipse fill="#fdb462" stroke="black" cx="641" cy="-104" rx="88.04" ry="18"/>
+<text text-anchor="middle" x="641" y="-99.8" font-family="Times,serif" font-size="14.00">AddToCartProvider</text>
 </g>
 <!-- AddToCartProvider&#45;&gt;CartModule -->
 <g id="edge5" class="edge">
 <title>AddToCartProvider&#45;&gt;CartModule</title>
-<path fill="none" stroke="black" d="M961,-122.29C961,-144.21 961,-178 961,-178 961,-178 501.82,-178 501.82,-178"/>
-<polygon fill="black" stroke="black" points="501.82,-174.5 491.82,-178 501.82,-181.5 501.82,-174.5"/>
+<path fill="none" stroke="black" d="M641,-122.11C641,-122.11 641,-140.99 641,-140.99"/>
+<polygon fill="black" stroke="black" points="637.5,-140.99 641,-150.99 644.5,-140.99 637.5,-140.99"/>
 </g>
 <!-- CartService -->
 <g id="node7" class="node">
 <title>CartService</title>
-<ellipse fill="#fdb462" stroke="black" cx="798" cy="-104" rx="56.73" ry="18"/>
-<text text-anchor="middle" x="798" y="-99.8" font-family="Times,serif" font-size="14.00">CartService</text>
+<ellipse fill="#fdb462" stroke="black" cx="478" cy="-104" rx="56.73" ry="18"/>
+<text text-anchor="middle" x="478" y="-99.8" font-family="Times,serif" font-size="14.00">CartService</text>
 </g>
 <!-- CartService&#45;&gt;CartModule -->
 <g id="edge6" class="edge">
 <title>CartService&#45;&gt;CartModule</title>
-<path fill="none" stroke="black" d="M798,-122.11C798,-141.34 798,-169 798,-169 798,-169 501.98,-169 501.98,-169"/>
-<polygon fill="black" stroke="black" points="501.98,-165.5 491.98,-169 501.98,-172.5 501.98,-165.5"/>
+<path fill="none" stroke="black" d="M478,-122.03C478,-138.4 478,-160 478,-160 478,-160 589.02,-160 589.02,-160"/>
+<polygon fill="black" stroke="black" points="589.02,-163.5 599.02,-160 589.02,-156.5 589.02,-163.5"/>
 </g>
 <!-- GetCartProvider -->
 <g id="node8" class="node">
 <title>GetCartProvider</title>
-<ellipse fill="#fdb462" stroke="black" cx="649" cy="-104" rx="74.71" ry="18"/>
-<text text-anchor="middle" x="649" y="-99.8" font-family="Times,serif" font-size="14.00">GetCartProvider</text>
+<ellipse fill="#fdb462" stroke="black" cx="329" cy="-104" rx="74.71" ry="18"/>
+<text text-anchor="middle" x="329" y="-99.8" font-family="Times,serif" font-size="14.00">GetCartProvider</text>
 </g>
 <!-- GetCartProvider&#45;&gt;CartModule -->
 <g id="edge7" class="edge">
 <title>GetCartProvider&#45;&gt;CartModule</title>
-<path fill="none" stroke="black" d="M649,-122.03C649,-138.4 649,-160 649,-160 649,-160 501.72,-160 501.72,-160"/>
-<polygon fill="black" stroke="black" points="501.72,-156.5 491.72,-160 501.72,-163.5 501.72,-156.5"/>
+<path fill="none" stroke="black" d="M329,-122.11C329,-141.34 329,-169 329,-169 329,-169 589.25,-169 589.25,-169"/>
+<polygon fill="black" stroke="black" points="589.25,-172.5 599.25,-169 589.25,-165.5 589.25,-172.5"/>
 </g>
 <!-- UpdateCartItemProvider -->
 <g id="node9" class="node">
 <title>UpdateCartItemProvider</title>
-<ellipse fill="#fdb462" stroke="black" cx="450" cy="-104" rx="106.5" ry="18"/>
-<text text-anchor="middle" x="450" y="-99.8" font-family="Times,serif" font-size="14.00">UpdateCartItemProvider</text>
+<ellipse fill="#fdb462" stroke="black" cx="130" cy="-104" rx="106.5" ry="18"/>
+<text text-anchor="middle" x="130" y="-99.8" font-family="Times,serif" font-size="14.00">UpdateCartItemProvider</text>
 </g>
 <!-- UpdateCartItemProvider&#45;&gt;CartModule -->
 <g id="edge8" class="edge">
 <title>UpdateCartItemProvider&#45;&gt;CartModule</title>
-<path fill="none" stroke="black" d="M450,-122.11C450,-122.11 450,-140.99 450,-140.99"/>
-<polygon fill="black" stroke="black" points="446.5,-140.99 450,-150.99 453.5,-140.99 446.5,-140.99"/>
+<path fill="none" stroke="black" d="M130,-122.29C130,-144.21 130,-178 130,-178 130,-178 589.18,-178 589.18,-178"/>
+<polygon fill="black" stroke="black" points="589.18,-181.5 599.18,-178 589.18,-174.5 589.18,-181.5"/>
 </g>
 </g>
 </svg>
