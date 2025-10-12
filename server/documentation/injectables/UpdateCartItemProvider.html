@@ -733,7 +733,13 @@ export class UpdateCartItemProvider {
 
   // Clear cart after order
   async clearCart(userId: string): Promise&lt;{ message: string }&gt; {
-    await this.cartItemRepository.softDelete({ user: { id: userId } });
+    console.log(&#x27;going..&#x27;);
+    try {
+      await this.cartItemRepository.softDelete({ user: { id: userId } });
+      console.log(&#x27;finish&#x27;);
+    } catch (error) {
+      console.log(error);
+    }
 
     return {
       message: &#x27;Cart cleared successfully&#x27;,
