@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { GetProductsDto } from '../dtos/get-products.dto';
 import { Paginated } from 'src/common/pagination/interfaces/paginated.interface';
 import { Product } from '../product.entity';
-import { Between, FindOptionsOrder, In, Like, Repository } from 'typeorm';
+import { Between, FindOptionsOrder, ILike, In, Repository } from 'typeorm';
 import { PaginationQueryDto } from 'src/common/pagination/dtos/pagination-query.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { PaginationProvider } from 'src/common/pagination/providers/pagination.provider';
@@ -22,7 +22,9 @@ export class FindAllProductsProvider {
     private readonly paginationProvider: PaginationProvider,
   ) {}
 
-  findAllProducts(productQuery: GetProductsDto): Promise<Paginated<Product>> {
+  async findAllProducts(
+    productQuery: GetProductsDto,
+  ): Promise<Paginated<Product>> {
     const cleanedQuery = this.cleanQuery(productQuery);
 
     const { limit, page, sort } = cleanedQuery;
@@ -48,7 +50,7 @@ export class FindAllProductsProvider {
     }
     if (cleanedQuery.name) {
       const searchTerm = cleanedQuery.name.split('-').join(' '); // Replace dashes with spaces
-      where.name = Like(`%${searchTerm}%`);
+      where.name = ILike(`%${searchTerm}%`);
     }
 
     // Build order conditions (default to newest)
@@ -60,6 +62,9 @@ export class FindAllProductsProvider {
           break;
         case 'oldest':
           order.createdAt = 'ASC';
+          break;
+        case 'most_purchased':
+          order.purchaseCount = 'DESC';
           break;
 
         default:
@@ -74,14 +79,17 @@ export class FindAllProductsProvider {
       page: safePage,
     };
 
-    return this.paginationProvider.paginationQuery<Product>(
-      paginationQuery,
-      this.productsRepository,
-      {
-        where,
-        order,
-      },
-    );
+    const paginatedProducts =
+      await this.paginationProvider.paginationQuery<Product>(
+        paginationQuery,
+        this.productsRepository,
+        {
+          where,
+          order,
+        },
+      );
+
+    return paginatedProducts;
   }
 
   private cleanQuery(query: GetProductsDto): GetProductsDto {
