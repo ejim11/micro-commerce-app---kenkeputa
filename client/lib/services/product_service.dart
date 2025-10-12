@@ -5,14 +5,37 @@ import 'package:client/models/product_model.dart';
 class ProductService {
   static const String baseUrl = 'http://localhost:3001/api/v1';
 
-  // Get all products with pagination
+  // lib/services/product_service.dart
   static Future<Map<String, dynamic>> getProducts({
     int page = 1,
     int limit = 10,
     String? accessToken,
+    String? name,
+    String? category,
+    String? sort,
   }) async {
     try {
-      final uri = Uri.parse('$baseUrl/products?limit=$limit&page=$page');
+      // Build query parameters
+      final queryParams = <String, String>{
+        'page': page.toString(),
+        'limit': limit.toString(),
+      };
+
+      if (name != null && name.isNotEmpty) {
+        queryParams['name'] = name;
+      }
+
+      if (category != null && category.isNotEmpty) {
+        queryParams['category'] = category;
+      }
+
+      if (sort != null && sort.isNotEmpty) {
+        queryParams['sort'] = sort;
+      }
+
+      final uri = Uri.parse(
+        '$baseUrl/products',
+      ).replace(queryParameters: queryParams);
 
       final headers = {
         'Content-Type': 'application/json',
