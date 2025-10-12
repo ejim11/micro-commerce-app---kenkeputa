@@ -1,3 +1,5 @@
+// lib/providers/product_provider.dart
+import 'dart:async';
 import 'package:client/models/product_model.dart';
 import 'package:client/services/product_service.dart';
 import 'package:flutter_riverpod/legacy.dart';
@@ -10,6 +12,9 @@ class ProductState {
   final bool isLoading;
   final String? error;
   final int currentPage;
+  final String? searchQuery;
+  final String? categoryFilter;
+  final String? sortBy;
 
   ProductState({
     this.products = const [],
@@ -18,6 +23,9 @@ class ProductState {
     this.isLoading = false,
     this.error,
     this.currentPage = 1,
+    this.searchQuery,
+    this.categoryFilter,
+    this.sortBy,
   });
 
   ProductState copyWith({
@@ -27,6 +35,9 @@ class ProductState {
     bool? isLoading,
     String? error,
     int? currentPage,
+    String? searchQuery,
+    String? categoryFilter,
+    String? sortBy,
   }) {
     return ProductState(
       products: products ?? this.products,
@@ -35,19 +46,33 @@ class ProductState {
       isLoading: isLoading ?? this.isLoading,
       error: error,
       currentPage: currentPage ?? this.currentPage,
+      searchQuery: searchQuery ?? this.searchQuery,
+      categoryFilter: categoryFilter ?? this.categoryFilter,
+      sortBy: sortBy ?? this.sortBy,
     );
   }
 }
 
 // State notifier for products
 class ProductNotifier extends StateNotifier<ProductState> {
+  Timer? _debounceTimer;
+
   ProductNotifier() : super(ProductState());
 
-  // Fetch products
+  @override
+  void dispose() {
+    _debounceTimer?.cancel();
+    super.dispose();
+  }
+
+  // Fetch products with filters
   Future<void> fetchProducts({
     int page = 1,
     int limit = 10,
     String? accessToken,
+    String? searchQuery,
+    String? category,
+    String? sort,
   }) async {
     state = state.copyWith(isLoading: true, error: null);
 
@@ -56,6 +81,9 @@ class ProductNotifier extends StateNotifier<ProductState> {
         page: page,
         limit: limit,
         accessToken: accessToken,
+        name: searchQuery,
+        category: category,
+        sort: sort,
       );
 
       if (result['success']) {
@@ -66,6 +94,9 @@ class ProductNotifier extends StateNotifier<ProductState> {
           links: productResponse.links,
           isLoading: false,
           currentPage: page,
+          searchQuery: searchQuery,
+          categoryFilter: category,
+          sortBy: sort,
         );
       } else {
         state = state.copyWith(isLoading: false, error: result['message']);
@@ -78,10 +109,57 @@ class ProductNotifier extends StateNotifier<ProductState> {
     }
   }
 
+  // Search products with debouncing
+  void searchProducts(String query, {String? accessToken}) {
+    // Cancel previous timer
+    _debounceTimer?.cancel();
+
+    // Update state immediately to show user input
+    state = state.copyWith(searchQuery: query);
+
+    // Start new timer
+    _debounceTimer = Timer(const Duration(milliseconds: 500), () {
+      fetchProducts(
+        page: 1,
+        accessToken: accessToken,
+        searchQuery: query.isEmpty ? null : query,
+        category: state.categoryFilter,
+        sort: state.sortBy,
+      );
+    });
+  }
+
+  // Filter by category
+  Future<void> filterByCategory(String? category, {String? accessToken}) async {
+    await fetchProducts(
+      page: 1,
+      accessToken: accessToken,
+      searchQuery: state.searchQuery,
+      category: category,
+      sort: state.sortBy,
+    );
+  }
+
+  // Sort products
+  Future<void> sortProducts(String? sortBy, {String? accessToken}) async {
+    await fetchProducts(
+      page: 1,
+      accessToken: accessToken,
+      searchQuery: state.searchQuery,
+      category: state.categoryFilter,
+      sort: sortBy,
+    );
+  }
+
+  // Clear all filters
+  Future<void> clearFilters({String? accessToken}) async {
+    await fetchProducts(page: 1, accessToken: accessToken);
+  }
+
   // Load more products (pagination)
   Future<void> loadMoreProducts({String? accessToken}) async {
     if (state.meta == null || state.currentPage >= state.meta!.totalPages) {
-      return; // No more pages to load
+      return;
     }
 
     final nextPage = state.currentPage + 1;
@@ -91,31 +169,39 @@ class ProductNotifier extends StateNotifier<ProductState> {
         page: nextPage,
         limit: state.meta!.itemsPerPage,
         accessToken: accessToken,
+        name: state.searchQuery,
+        category: state.categoryFilter,
+        sort: state.sortBy,
       );
 
       if (result['success']) {
         final productResponse = result['data'] as ProductResponse;
-        state = ProductState(
+        state = state.copyWith(
           products: [...state.products, ...productResponse.products],
           meta: productResponse.meta,
           links: productResponse.links,
-          isLoading: false,
           currentPage: nextPage,
         );
       }
     } catch (e) {
-      // Handle error silently for load more
       print('Error loading more products: $e');
     }
   }
 
   // Refresh products
   Future<void> refreshProducts({String? accessToken}) async {
-    await fetchProducts(page: 1, accessToken: accessToken);
+    await fetchProducts(
+      page: 1,
+      accessToken: accessToken,
+      searchQuery: state.searchQuery,
+      category: state.categoryFilter,
+      sort: state.sortBy,
+    );
   }
 
   // Clear products
   void clearProducts() {
+    _debounceTimer?.cancel();
     state = ProductState();
   }
 }
