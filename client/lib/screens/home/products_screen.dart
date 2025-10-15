@@ -1,6 +1,7 @@
 // lib/screens/products_screen.dart
 import 'package:client/enums/product_category.enum.dart';
 import 'package:client/widgets/product/product_card.dart';
+import 'package:client/widgets/product/skeleton_product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:client/providers/product_provider.dart';
@@ -329,7 +330,20 @@ class _ProductsScreenState extends ConsumerState<ProductsScreen> {
 
   Widget _buildProductsContent(ProductState productState) {
     if (productState.isLoading && productState.products.isEmpty) {
-      return const Center(child: CircularProgressIndicator());
+      // Show skeleton loading grid
+      return GridView.builder(
+        padding: const EdgeInsets.all(12),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 0.655,
+          crossAxisSpacing: 12,
+          mainAxisSpacing: 12,
+        ),
+        itemCount: 6, // Show 6 skeleton cards
+        itemBuilder: (context, index) {
+          return const SkeletonProductCard();
+        },
+      );
     }
 
     if (productState.error != null && productState.products.isEmpty) {
@@ -391,7 +405,7 @@ class _ProductsScreenState extends ConsumerState<ProductsScreen> {
       },
       child: GridView.builder(
         controller: _scrollController,
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.fromLTRB(12, 12, 12, 130),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: 0.655,
@@ -399,15 +413,11 @@ class _ProductsScreenState extends ConsumerState<ProductsScreen> {
           mainAxisSpacing: 12,
         ),
         itemCount:
-            productState.products.length + (productState.isLoading ? 1 : 0),
+            productState.products.length + (productState.isLoading ? 2 : 0),
         itemBuilder: (context, index) {
-          if (index == productState.products.length) {
-            return const Center(
-              child: Padding(
-                padding: EdgeInsets.all(8.0),
-                child: CircularProgressIndicator(),
-              ),
-            );
+          // Show skeleton cards at the bottom when loading more
+          if (index >= productState.products.length) {
+            return const SkeletonProductCard();
           }
 
           final product = productState.products[index];
