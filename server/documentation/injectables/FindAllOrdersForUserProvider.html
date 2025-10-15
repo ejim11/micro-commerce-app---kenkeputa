@@ -292,11 +292,14 @@ export class FindAllOrdersForUserProvider {
     private readonly orderRepository: Repository&lt;Order&gt;,
   ) {}
   async findAllOrders(userId: string): Promise&lt;Order[]&gt; {
-    return this.orderRepository.find({
+    const orders &#x3D; await this.orderRepository.find({
       where: { user: { id: userId } },
       relations: [&#x27;items&#x27;, &#x27;items.product&#x27;],
       order: { createdAt: &#x27;DESC&#x27; },
     });
+
+    console.log(&#x27;Retrieved orders:&#x27;, orders); // Debugging log
+    return orders;
   }
 }
 </code></pre>

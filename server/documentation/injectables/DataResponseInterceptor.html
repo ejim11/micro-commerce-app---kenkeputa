@@ -335,9 +335,12 @@ export class DataResponseInterceptor implements NestInterceptor {
   intercept(context: ExecutionContext, next: CallHandler): Observable&lt;any&gt; {
     // console.log(&#x27;Before ...&#x27;);
     // before method execution
+
+    const response &#x3D; context.switchToHttp().getResponse();
     return next.handle().pipe(
       map((data) &#x3D;&gt; ({
         apiVersion: this.configService.get(&#x27;appConfig.apiVersion&#x27;),
+        statusCode: response.statusCode,
         data: data,
       })),
     );
