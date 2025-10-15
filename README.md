@@ -76,7 +76,7 @@ npm i --legacy-peer-deps
 #### Run Database Migrations
 
 ```bash
-npm run typeorm:migrate:run
+npm run typeorm:migration:run
 ```
 
 This will:
