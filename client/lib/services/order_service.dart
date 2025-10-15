@@ -66,6 +66,10 @@ class OrderService {
       final responseData = jsonDecode(response.body);
 
       if (response.statusCode == 200) {
+        // for (var orderJson in responseData['data']) {
+        //   print(orderJson);
+        // }
+
         final orders = (responseData['data'] as List)
             .map((orderJson) => Order.fromJson(orderJson))
             .toList();
