@@ -224,6 +224,105 @@ class _ProductsScreenState extends ConsumerState<ProductsScreen> {
     );
   }
 
+  Widget _buildProductsContent(ProductState productState) {
+    if (productState.isLoading && productState.products.isEmpty) {
+      // Show skeleton loading grid
+      return GridView.builder(
+        padding: const EdgeInsets.all(12),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 0.655,
+          crossAxisSpacing: 12,
+          mainAxisSpacing: 12,
+        ),
+        itemCount: 6, // Show 6 skeleton cards
+        itemBuilder: (context, index) {
+          return const SkeletonProductCard();
+        },
+      );
+    }
+
+    if (productState.error != null && productState.products.isEmpty) {
+      return Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.error_outline, size: 60, color: Colors.red[300]),
+            const SizedBox(height: 16),
+            Text(
+              productState.error!,
+              style: TextStyle(color: Colors.grey[600]),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: _fetchProducts,
+              child: const Text('Retry'),
+            ),
+          ],
+        ),
+      );
+    }
+
+    if (productState.products.isEmpty) {
+      return Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.shopping_bag_outlined,
+              size: 80,
+              color: Theme.of(context).colorScheme.onPrimary,
+            ),
+            const SizedBox(height: 20),
+            Text(
+              'No Products Found',
+              style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                color: Theme.of(context).colorScheme.onPrimary,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Try adjusting your search or filters',
+              style: TextStyle(color: Colors.grey[600]),
+            ),
+          ],
+        ),
+      );
+    }
+
+    return RefreshIndicator(
+      onRefresh: () async {
+        final accessToken = ref.read(authProvider)?.accessToken;
+        await ref
+            .read(productProvider.notifier)
+            .refreshProducts(accessToken: accessToken);
+      },
+      child: GridView.builder(
+        controller: _scrollController,
+        padding: const EdgeInsets.fromLTRB(12, 12, 12, 130),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 0.655,
+          crossAxisSpacing: 12,
+          mainAxisSpacing: 12,
+        ),
+        itemCount:
+            productState.products.length + (productState.isLoading ? 2 : 0),
+        itemBuilder: (context, index) {
+          // Show skeleton cards at the bottom when loading more
+          if (index >= productState.products.length) {
+            return const SkeletonProductCard();
+          }
+
+          final product = productState.products[index];
+          return ProductCard(product: product);
+        },
+      ),
+    );
+  }
+
   @override
   void dispose() {
     _scrollController.dispose();
@@ -324,105 +423,6 @@ class _ProductsScreenState extends ConsumerState<ProductsScreen> {
           // Products Grid
           Expanded(child: _buildProductsContent(productState)),
         ],
-      ),
-    );
-  }
-
-  Widget _buildProductsContent(ProductState productState) {
-    if (productState.isLoading && productState.products.isEmpty) {
-      // Show skeleton loading grid
-      return GridView.builder(
-        padding: const EdgeInsets.all(12),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 0.655,
-          crossAxisSpacing: 12,
-          mainAxisSpacing: 12,
-        ),
-        itemCount: 6, // Show 6 skeleton cards
-        itemBuilder: (context, index) {
-          return const SkeletonProductCard();
-        },
-      );
-    }
-
-    if (productState.error != null && productState.products.isEmpty) {
-      return Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.error_outline, size: 60, color: Colors.red[300]),
-            const SizedBox(height: 16),
-            Text(
-              productState.error!,
-              style: TextStyle(color: Colors.grey[600]),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: _fetchProducts,
-              child: const Text('Retry'),
-            ),
-          ],
-        ),
-      );
-    }
-
-    if (productState.products.isEmpty) {
-      return Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.shopping_bag_outlined,
-              size: 80,
-              color: Theme.of(context).colorScheme.onPrimary,
-            ),
-            const SizedBox(height: 20),
-            Text(
-              'No Products Found',
-              style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                color: Theme.of(context).colorScheme.onPrimary,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              'Try adjusting your search or filters',
-              style: TextStyle(color: Colors.grey[600]),
-            ),
-          ],
-        ),
-      );
-    }
-
-    return RefreshIndicator(
-      onRefresh: () async {
-        final accessToken = ref.read(authProvider)?.accessToken;
-        await ref
-            .read(productProvider.notifier)
-            .refreshProducts(accessToken: accessToken);
-      },
-      child: GridView.builder(
-        controller: _scrollController,
-        padding: const EdgeInsets.fromLTRB(12, 12, 12, 130),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 0.655,
-          crossAxisSpacing: 12,
-          mainAxisSpacing: 12,
-        ),
-        itemCount:
-            productState.products.length + (productState.isLoading ? 2 : 0),
-        itemBuilder: (context, index) {
-          // Show skeleton cards at the bottom when loading more
-          if (index >= productState.products.length) {
-            return const SkeletonProductCard();
-          }
-
-          final product = productState.products[index];
-          return ProductCard(product: product);
-        },
       ),
     );
   }
