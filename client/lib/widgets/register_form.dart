@@ -148,6 +148,10 @@ class _RegisterFormState extends State<RegisterForm> {
             style: TextStyle(color: Colors.black),
             decoration: InputDecoration(
               floatingLabelBehavior: FloatingLabelBehavior.always,
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: const BorderSide(color: Colors.blue, width: 1),
+              ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: const BorderSide(
@@ -183,6 +187,10 @@ class _RegisterFormState extends State<RegisterForm> {
             style: TextStyle(color: Colors.black),
             decoration: InputDecoration(
               floatingLabelBehavior: FloatingLabelBehavior.always,
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: const BorderSide(color: Colors.blue, width: 1),
+              ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: const BorderSide(
@@ -221,6 +229,10 @@ class _RegisterFormState extends State<RegisterForm> {
                 color: Theme.of(context).colorScheme.onPrimary,
               ),
               floatingLabelBehavior: FloatingLabelBehavior.always,
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: const BorderSide(color: Colors.blue, width: 1),
+              ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: const BorderSide(
@@ -279,6 +291,10 @@ class _RegisterFormState extends State<RegisterForm> {
                       ),
               ),
               floatingLabelBehavior: FloatingLabelBehavior.always,
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: const BorderSide(color: Colors.blue, width: 1),
+              ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: const BorderSide(

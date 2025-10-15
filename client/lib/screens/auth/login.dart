@@ -1,3 +1,4 @@
+import "package:client/screens/auth/register.dart";
 import "package:client/widgets/login_form.dart";
 import "package:flutter/gestures.dart";
 import "package:flutter/material.dart";
@@ -58,12 +59,12 @@ class Login extends StatelessWidget {
                               ),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
-                                  // Navigator.pushReplacement(
-                                  //   context,
-                                  //   MaterialPageRoute(
-                                  //     builder: (ctx) => const Register(),
-                                  //   ),
-                                  // );
+                                  Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (ctx) => const Register(),
+                                    ),
+                                  );
                                 },
                             ),
                           ],

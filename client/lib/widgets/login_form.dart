@@ -107,6 +107,10 @@ class _LoginFormState extends ConsumerState<LoginForm> {
                 color: Theme.of(context).colorScheme.onPrimary,
               ),
               floatingLabelBehavior: FloatingLabelBehavior.always,
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: const BorderSide(color: Colors.blue, width: 1),
+              ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: const BorderSide(
@@ -141,6 +145,10 @@ class _LoginFormState extends ConsumerState<LoginForm> {
             obscureText: !_passwordVisible,
             style: TextStyle(color: Colors.black),
             decoration: InputDecoration(
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: const BorderSide(color: Colors.blue, width: 1),
+              ),
               prefixIcon: Icon(
                 Icons.lock,
                 color: Theme.of(context).colorScheme.onPrimary,
