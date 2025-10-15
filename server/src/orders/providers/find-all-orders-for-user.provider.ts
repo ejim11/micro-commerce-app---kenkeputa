@@ -10,10 +10,12 @@ export class FindAllOrdersForUserProvider {
     private readonly orderRepository: Repository<Order>,
   ) {}
   async findAllOrders(userId: string): Promise<Order[]> {
-    return this.orderRepository.find({
+    const orders = await this.orderRepository.find({
       where: { user: { id: userId } },
       relations: ['items', 'items.product'],
       order: { createdAt: 'DESC' },
     });
+
+    return orders;
   }
 }
