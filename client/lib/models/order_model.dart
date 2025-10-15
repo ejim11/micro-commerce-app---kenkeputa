@@ -1,6 +1,5 @@
 // lib/models/order_model.dart
 import 'package:client/models/product_model.dart';
-import 'package:client/models/user_model.dart';
 
 class Order {
   final String id;
@@ -12,7 +11,7 @@ class Order {
   final DateTime createdAt;
   final DateTime updatedAt;
   final List<OrderItem>? items;
-  final User user;
+  // final User user;
 
   Order({
     required this.id,
@@ -24,7 +23,7 @@ class Order {
     required this.createdAt,
     required this.updatedAt,
     this.items,
-    required this.user,
+    // required this.user,
   });
 
   double get totalAsDouble => double.parse(total);
@@ -45,7 +44,7 @@ class Order {
                 .toList()
           : null,
       // user: json['user'] != null ? User.fromJson(json['user']) : null,
-      user: User.fromJson(json['user']),
+      // user: User.fromJson(json['user']),
     );
   }
 
@@ -60,7 +59,7 @@ class Order {
       'createdAt': createdAt.toIso8601String(),
       'updatedAt': updatedAt.toIso8601String(),
       'items': items?.map((item) => item.toJson()).toList(),
-      'user': user.toJson(),
+      // 'user': user.toJson(),
     };
   }
 }
