@@ -99,10 +99,14 @@ class CartNotifier extends StateNotifier<CartState> {
     }
   }
 
-  Future<void> clearCart() async {
+  Future<void> clearCart({required bool shouldCallApi}) async {
+    if (shouldCallApi == false) {
+      state = state.copyWith(cart: Cart(items: [], subtotal: 0, total: 0));
+      return;
+    }
     try {
       await _cartService.clearCart();
-      state = state.copyWith(cart: null);
+      state = state.copyWith(cart: Cart(items: [], subtotal: 0, total: 0));
     } catch (e) {
       state = state.copyWith(error: e.toString());
     }
