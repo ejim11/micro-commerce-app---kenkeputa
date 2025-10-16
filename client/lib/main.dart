@@ -23,7 +23,7 @@ var kDarkColorScheme = ColorScheme.fromSeed(
   seedColor: Colors.black,
   surface: const Color.fromRGBO(31, 31, 31, 1),
   onSurface: const Color.fromRGBO(255, 255, 255, 1),
-  primaryContainer: const Color.fromRGBO(35, 35, 35, 1),
+  primaryContainer: const Color.fromARGB(255, 68, 18, 18),
   onPrimary: const Color.fromRGBO(79, 97, 211, 1),
 );
 
