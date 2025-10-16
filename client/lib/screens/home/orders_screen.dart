@@ -88,7 +88,7 @@ class _OrdersScreenState extends ConsumerState<OrdersScreen> {
                   Text('Date: ${order.createdAt.toString().substring(0, 10)}'),
                 ],
               ),
-              trailing: const Icon(Icons.chevron_right),
+              // trailing: const Icon(Icons.chevron_right),
               onTap: () {
                 // Navigate to order details
                 // Navigator.pushNamed(
