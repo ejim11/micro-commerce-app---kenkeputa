@@ -1,8 +1,8 @@
 POST http://localhost:3001/api/v1/cart
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiNDIyNDFiYy02ZmY5LTQ1MWMtYWZiNS0yZmM3N2Q3YjBlMDEiLCJlbWFpbCI6ImZhdm91ckBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MDE5MzIxMywiZXhwIjoxNzYwMTk2ODEzLCJhdWQiOiJsb2NhbGhvc3Q6MzAwMSIsImlzcyI6ImxvY2FsaG9zdDozMDAxIn0.NJhzvwFXapI-GWiwxcqHVXYXBJOG8oHi3-YY1n6fzJA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiNDIyNDFiYy02ZmY5LTQ1MWMtYWZiNS0yZmM3N2Q3YjBlMDEiLCJlbWFpbCI6ImZhdm91ckBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MDYzNDkzNywiZXhwIjoxNzYwNjM4NTM3LCJhdWQiOiJsb2NhbGhvc3Q6MzAwMSIsImlzcyI6ImxvY2FsaG9zdDozMDAxIn0.v24b1DkVduNELcQt0ZNHqHPp-5Ac3d8PVt7mJmtLIpE
 
 {
-    "productId": "665c5908-2a3b-4bf1-b6a9-8559acb59efa",
-    "quantity": 7
+    "productId": "6351f37e-0bc4-44eb-aab8-7eebaca0c563",
+    "quantity": 2
 }
