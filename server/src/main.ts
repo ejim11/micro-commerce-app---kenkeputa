@@ -40,6 +40,15 @@ async function bootstrap() {
     .setLicense('MIT License', 'https://opensource.org/licenses/MIT')
     .addServer('http://localhost:3001', 'Local Server')
     .setVersion('1.0.0')
+    .addBearerAuth(
+      {
+        type: 'http',
+        scheme: 'bearer',
+        bearerFormat: 'JWT',
+        description: 'Enter your JWT token',
+      },
+      'bearer', // This is the name of the security scheme
+    )
     .build();
 
   // instantiate the doc
