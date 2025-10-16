@@ -76,6 +76,8 @@ class ProductNotifier extends StateNotifier<ProductState> {
   }) async {
     state = state.copyWith(isLoading: true, error: null);
 
+    await Future.delayed(const Duration(seconds: 1));
+
     try {
       final result = await ProductService.getProducts(
         page: page,
