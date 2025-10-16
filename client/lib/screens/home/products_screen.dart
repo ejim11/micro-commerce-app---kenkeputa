@@ -1,5 +1,6 @@
 // lib/screens/products_screen.dart
 import 'package:client/enums/product_category.enum.dart';
+import 'package:client/providers/cart_provider.dart';
 import 'package:client/widgets/product/product_card.dart';
 import 'package:client/widgets/product/skeleton_product_card.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +32,8 @@ class _ProductsScreenState extends ConsumerState<ProductsScreen> {
   @override
   void initState() {
     super.initState();
+    Future(() => {ref.read(cartProvider.notifier).fetchCart()});
+
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _fetchProducts();
     });
@@ -225,7 +228,8 @@ class _ProductsScreenState extends ConsumerState<ProductsScreen> {
   }
 
   Widget _buildProductsContent(ProductState productState) {
-    if (productState.isLoading && productState.products.isEmpty) {
+    // if (productState.isLoading && productState.products.isEmpty) {
+    if (productState.isLoading) {
       // Show skeleton loading grid
       return GridView.builder(
         padding: const EdgeInsets.all(12),
