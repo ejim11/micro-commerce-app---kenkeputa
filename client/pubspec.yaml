@@ -38,6 +38,7 @@ dependencies:
   http: ^1.5.0
   flutter_riverpod: ^3.0.1
   shared_preferences: ^2.5.3
+  flutter_launcher_icons: ^0.14.4
 
 dev_dependencies:
   flutter_test:
@@ -89,3 +90,8 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/kitchen-logo.png"
+# dart run flutter_launcher_icons
