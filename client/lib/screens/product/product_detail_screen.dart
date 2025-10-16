@@ -1,4 +1,6 @@
+import 'package:client/enums/snackbar_type.enum.dart';
 import 'package:client/providers/cart_provider.dart';
+import 'package:client/utils/snackbar_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -154,15 +156,25 @@ class ProductDetailScreen extends ConsumerWidget {
           // ],
         ),
         child: ElevatedButton(
-          onPressed: () {
-            ref.read(cartProvider.notifier).addToCart(productId);
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text('$productName added to cart!'),
-                duration: const Duration(seconds: 2),
-                behavior: SnackBarBehavior.floating,
-              ),
-            );
+          onPressed: () async {
+            try {
+              await ref.read(cartProvider.notifier).addToCart(productId);
+
+              if (!context.mounted) return;
+
+              SnackBarUtil.show(
+                context,
+                message: '$productName added to cart!',
+                type: SnackBarType.success,
+              );
+            } catch (e) {
+              if (!context.mounted) return;
+              SnackBarUtil.show(
+                context,
+                message: 'Failed to add to cart: $e',
+                type: SnackBarType.error,
+              );
+            }
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: Theme.of(context).colorScheme.onPrimary,
@@ -174,7 +186,14 @@ class ProductDetailScreen extends ConsumerWidget {
             elevation: 0,
           ),
           child: isLoading
-              ? CircularProgressIndicator()
+              ? SizedBox(
+                  width: 25,
+                  height: 25,
+                  child: CircularProgressIndicator(
+                    strokeWidth: 2,
+                    color: Colors.white,
+                  ),
+                )
               : const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
