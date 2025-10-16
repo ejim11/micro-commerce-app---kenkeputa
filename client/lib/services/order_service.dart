@@ -37,7 +37,8 @@ class OrderService {
       } else {
         return {
           'success': false,
-          'message': responseData['message'] ?? 'Failed to create order',
+          'message':
+              responseData['details']['error'] ?? 'Failed to create order',
         };
       }
     } catch (e) {
