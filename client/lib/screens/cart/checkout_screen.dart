@@ -1,8 +1,11 @@
 // lib/screens/checkout_screen.dart
+import 'package:client/enums/snackbar_type.enum.dart';
 import 'package:client/models/order_model.dart';
 import 'package:client/providers/auth_provider.dart';
+import 'package:client/providers/cart_provider.dart';
 import 'package:client/providers/order_provider.dart';
 import 'package:client/screens/home/home_screen.dart';
+import 'package:client/utils/snackbar_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -26,16 +29,25 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
     super.dispose();
   }
 
-  void _createOrder() {
+  void _displaySnackBar(String message, SnackBarType type) {
+    SnackBarUtil.show(context, message: message, type: type);
+  }
+
+  void _navToOrdersScreen() {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (ctx) => HomeScreen(initialTabIndex: 2)),
+    );
+  }
+
+  void _createOrder() async {
     if (!_formKey.currentState!.validate()) {
       return;
     }
 
     final accessToken = ref.read(authProvider)?.accessToken;
     if (accessToken == null) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('Please login to continue')));
+      SnackBarUtil.show(context, message: 'Please login to continue');
       return;
     }
 
@@ -45,14 +57,33 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
       paymentMethod: _paymentMethod,
     );
 
-    ref
-        .read(orderProvider.notifier)
-        .createOrder(orderData: orderData, accessToken: accessToken);
+    try {
+      final result = await ref
+          .read(orderProvider.notifier)
+          .createOrder(orderData: orderData, accessToken: accessToken);
 
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (ctx) => HomeScreen(initialTabIndex: 2)),
-    );
+      if (!context.mounted) return;
+
+      if (result['success'] == true) {
+        await ref.read(cartProvider.notifier).clearCart(shouldCallApi: false);
+
+        // _displaySnackBar('Order created successfully', SnackBarType.success);
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Order created successfully'),
+            backgroundColor: Colors.green,
+          ),
+        );
+
+        _navToOrdersScreen();
+      } else {
+        _displaySnackBar(result['message'], SnackBarType.error);
+      }
+    } catch (e) {
+      if (!context.mounted) return;
+      _displaySnackBar('Failed to add to cart: $e', SnackBarType.error);
+    }
   }
 
   @override
