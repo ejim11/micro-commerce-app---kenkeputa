@@ -452,7 +452,7 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @Column({length: 255, nullable: true})<br />
+                            @Column({nullable: true})<br />
                         </code>
                     </td>
                 </tr>
@@ -758,7 +758,7 @@ export class Product {
   @Column({ default: 0, nullable: false })
   stock: number;
 
-  @Column({ length: 255, nullable: true })
+  @Column({ nullable: true })
   imageUrl?: string;
 
   @CreateDateColumn()
