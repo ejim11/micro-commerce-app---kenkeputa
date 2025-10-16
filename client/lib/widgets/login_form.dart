@@ -47,6 +47,7 @@ class _LoginFormState extends ConsumerState<LoginForm> {
 
       if (result['success']) {
         // Show success message
+        // SnackBarUtil.show(context, message: result['message'] ?? 'Login successful');
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(result['message'] ?? 'Login successful'),
@@ -229,8 +230,8 @@ class _LoginFormState extends ConsumerState<LoginForm> {
             onPressed: _isLoading ? null : _submitLoginForm,
             child: _isLoading
                 ? const SizedBox(
-                    height: 20,
-                    width: 20,
+                    height: 25,
+                    width: 25,
                     child: CircularProgressIndicator(
                       strokeWidth: 2,
                       valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
