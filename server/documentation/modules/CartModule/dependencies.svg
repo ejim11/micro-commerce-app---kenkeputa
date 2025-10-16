@@ -28,13 +28,13 @@
 <title>cluster_CartModule_imports</title>
 <polygon fill="none" stroke="black" points="745,-78 745,-130 1057,-130 1057,-78 745,-78"/>
 </g>
-<g id="clust6" class="cluster">
-<title>cluster_CartModule_providers</title>
-<polygon fill="none" stroke="black" points="16,-78 16,-130 737,-130 737,-78 16,-78"/>
-</g>
 <g id="clust4" class="cluster">
 <title>cluster_CartModule_exports</title>
 <polygon fill="none" stroke="black" points="590,-208 590,-260 692,-260 692,-208 590,-208"/>
+</g>
+<g id="clust6" class="cluster">
+<title>cluster_CartModule_providers</title>
+<polygon fill="none" stroke="black" points="16,-78 16,-130 737,-130 737,-78 16,-78"/>
 </g>
 <!-- Product -->
 <g id="node1" class="node">

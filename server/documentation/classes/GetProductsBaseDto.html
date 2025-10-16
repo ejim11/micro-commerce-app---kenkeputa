@@ -142,10 +142,12 @@
                             <li>
                                     <span class="modifier"></span>
                                     <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                     <span class="modifier">Optional</span>
                                 <a href="#category" >category</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
                                     <span class="modifier"></span>
                                     <span class="modifier"></span>
                                     <span class="modifier">Optional</span>
@@ -154,10 +156,12 @@
                             <li>
                                     <span class="modifier"></span>
                                     <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                     <span class="modifier">Optional</span>
                                 <a href="#price" >price</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
                                     <span class="modifier"></span>
                                     <span class="modifier"></span>
                                     <span class="modifier"></span>
@@ -191,6 +195,7 @@
                     <span class="name">
                             <span class="modifier"></span>
                             <span class="modifier"></span>
+                            <span class="modifier"></span>
                             <span class="modifier">Optional</span>
                         <span ><b>category</b></span>
                         <a href="#category"><span class="icon ion-ios-link"></span></a>
@@ -208,19 +213,20 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @IsString()<br />@IsOptional()<br />
+                            @ApiProperty({description: &#x27;product category&#x27;, example: undefined})<br />@IsString()<br />@IsOptional()<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/products/dtos/get-products.dto.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/products/dtos/get-products.dto.ts:27</a></div>
                         </td>
                     </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>product category</p>
+                    <div class="io-description"><p>.
+product category</p>
 </div>
                 </td>
             </tr>
@@ -233,6 +239,7 @@
                 <td class="col-md-4">
                     <a name="name"></a>
                     <span class="name">
+                            <span class="modifier"></span>
                             <span class="modifier"></span>
                             <span class="modifier"></span>
                             <span class="modifier">Optional</span>
@@ -252,13 +259,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @IsString()<br />@IsOptional()<br />
+                            @ApiProperty({description: &#x27;product name&#x27;, example: &#x27;Gold plated spoons&#x27;})<br />@IsString()<br />@IsOptional()<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/products/dtos/get-products.dto.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/products/dtos/get-products.dto.ts:16</a></div>
                         </td>
                     </tr>
 
@@ -279,6 +286,7 @@
                     <span class="name">
                             <span class="modifier"></span>
                             <span class="modifier"></span>
+                            <span class="modifier"></span>
                             <span class="modifier">Optional</span>
                         <span ><b>price</b></span>
                         <a href="#price"><span class="icon ion-ios-link"></span></a>
@@ -296,13 +304,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @IsString()<br />@IsOptional()<br />
+                            @ApiProperty({description: &#x27;product price&#x27;, example: 23})<br />@IsString()<br />@IsOptional()<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/products/dtos/get-products.dto.ts:26</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/products/dtos/get-products.dto.ts:38</a></div>
                         </td>
                     </tr>
 
@@ -324,6 +332,7 @@
                             <span class="modifier"></span>
                             <span class="modifier"></span>
                             <span class="modifier"></span>
+                            <span class="modifier"></span>
                             <span class="modifier">Optional</span>
                         <span ><b>sort</b></span>
                         <a href="#sort"><span class="icon ion-ios-link"></span></a>
@@ -341,13 +350,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @IsOptional()<br />@IsString()<br />@IsIn([&#x27;newest&#x27;, &#x27;oldest&#x27;, &#x27;most_purchased&#x27;])<br />
+                            @ApiProperty({description: &#x27;product sort string&#x27;, example: &#x27;newest&#x27;})<br />@IsOptional()<br />@IsString()<br />@IsIn([&#x27;newest&#x27;, &#x27;oldest&#x27;, &#x27;most_purchased&#x27;])<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/products/dtos/get-products.dto.ts:31</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/products/dtos/get-products.dto.ts:47</a></div>
                         </td>
                     </tr>
 
@@ -369,19 +378,27 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IsIn, IsOptional, IsString } from &#x27;class-validator&#x27;;
 import { ProductCategory } from &#x27;../enums/product-category.enum&#x27;;
 import { PaginationQueryDto } from &#x27;src/common/pagination/dtos/pagination-query.dto&#x27;;
-import { IntersectionType } from &#x27;@nestjs/swagger&#x27;;
+import { ApiProperty, IntersectionType } from &#x27;@nestjs/swagger&#x27;;
 
 export class GetProductsBaseDto {
   /**
    * product name
    */
+  @ApiProperty({
+    description: &#x27;product name&#x27;,
+    example: &#x27;Gold plated spoons&#x27;,
+  })
   @IsString()
   @IsOptional()
   name?: string;
 
-  /**
+  /**.
    * product category
    */
+  @ApiProperty({
+    description: &#x27;product category&#x27;,
+    example: ProductCategory.BAKING,
+  })
   @IsString()
   @IsOptional()
   category?: ProductCategory;
@@ -389,10 +406,18 @@ export class GetProductsBaseDto {
   /**
    * product price
    */
+  @ApiProperty({
+    description: &#x27;product price&#x27;,
+    example: 23,
+  })
   @IsString()
   @IsOptional()
   price?: string;
 
+  @ApiProperty({
+    description: &#x27;product sort string&#x27;,
+    example: &#x27;newest&#x27;,
+  })
   @IsOptional()
   @IsString()
   @IsIn([&#x27;newest&#x27;, &#x27;oldest&#x27;, &#x27;most_purchased&#x27;])

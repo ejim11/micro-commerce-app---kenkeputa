@@ -148,6 +148,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                     <span class="modifier">Optional</span>
                                 <a href="#limit" >limit</a>
                             </li>
@@ -183,6 +184,7 @@
                     <a name="limit"></a>
                     <span class="name">
                             <span class="modifier"></span>
+                            <span class="modifier"></span>
                             <span class="modifier">Optional</span>
                         <span ><b>limit</b></span>
                         <a href="#limit"><span class="icon ion-ios-link"></span></a>
@@ -205,13 +207,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @IsOptional()<br />
+                            @ApiProperty({description: &#x27;pagination limit&#x27;, example: 10})<br />@IsOptional()<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/common/pagination/dtos/pagination-query.dto.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/common/pagination/dtos/pagination-query.dto.ts:17</a></div>
                         </td>
                     </tr>
 
@@ -260,7 +262,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/common/pagination/dtos/pagination-query.dto.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/common/pagination/dtos/pagination-query.dto.ts:24</a></div>
                         </td>
                     </tr>
 
@@ -285,7 +287,8 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IsOptional, IsPositive } from &#x27;class-validator&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ApiProperty } from &#x27;@nestjs/swagger&#x27;;
+import { IsOptional, IsPositive } from &#x27;class-validator&#x27;;
 
 /**
  * dto for the pagination query
@@ -294,6 +297,10 @@ export class PaginationQueryDto {
   /**
    * limit for the number of items in the get all requests
    */
+  @ApiProperty({
+    description: &#x27;pagination limit&#x27;,
+    example: 10,
+  })
   @IsOptional()
   limit?: number &#x3D; 0;
 

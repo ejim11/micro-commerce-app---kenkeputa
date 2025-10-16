@@ -159,19 +159,27 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IsIn, IsOptional, IsString } from &#x27;class-validator&#x27;;
 import { ProductCategory } from &#x27;../enums/product-category.enum&#x27;;
 import { PaginationQueryDto } from &#x27;src/common/pagination/dtos/pagination-query.dto&#x27;;
-import { IntersectionType } from &#x27;@nestjs/swagger&#x27;;
+import { ApiProperty, IntersectionType } from &#x27;@nestjs/swagger&#x27;;
 
 export class GetProductsBaseDto {
   /**
    * product name
    */
+  @ApiProperty({
+    description: &#x27;product name&#x27;,
+    example: &#x27;Gold plated spoons&#x27;,
+  })
   @IsString()
   @IsOptional()
   name?: string;
 
-  /**
+  /**.
    * product category
    */
+  @ApiProperty({
+    description: &#x27;product category&#x27;,
+    example: ProductCategory.BAKING,
+  })
   @IsString()
   @IsOptional()
   category?: ProductCategory;
@@ -179,10 +187,18 @@ export class GetProductsBaseDto {
   /**
    * product price
    */
+  @ApiProperty({
+    description: &#x27;product price&#x27;,
+    example: 23,
+  })
   @IsString()
   @IsOptional()
   price?: string;
 
+  @ApiProperty({
+    description: &#x27;product sort string&#x27;,
+    example: &#x27;newest&#x27;,
+  })
   @IsOptional()
   @IsString()
   @IsIn([&#x27;newest&#x27;, &#x27;oldest&#x27;, &#x27;most_purchased&#x27;])

@@ -142,21 +142,52 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                 <a href="#addToCart" >addToCart</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                     <span class="modifier"></span>
                                 <a href="#clearUserCart" >clearUserCart</a>
                             </li>
                             <li>
                                     <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                 <a href="#decrementQuantity" >decrementQuantity</a>
                             </li>
                             <li>
                                     <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                 <a href="#getUserCart" >getUserCart</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                     <span class="modifier"></span>
                                 <a href="#removeFromCart" >removeFromCart</a>
                             </li>
@@ -184,6 +215,13 @@
                     <a name="addToCart"></a>
                     <span class="name">
                             <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
                         <span ><b>addToCart</b></span>
                         <a href="#addToCart"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -200,14 +238,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Post(&#x27;&#x27;)<br /></code>
+                    <code>@ApiOperation({summary: &#x27;Add item to cart&#x27;, description: &#x27;Add a product to the user&#x27;s shopping cart or update quantity if item already exists&#x27;})<br />@ApiBearerAuth(&#x27;bearer&#x27;)<br />@ApiResponse({status: 201, description: &#x27;Item added to cart successfully&#x27;, schema: undefined})<br />@ApiResponse({status: 400, description: &#x27;Bad request - Invalid product ID or quantity&#x27;})<br />@ApiResponse({status: 401, description: &#x27;Unauthorized - Invalid or missing authentication token&#x27;})<br />@ApiResponse({status: 404, description: &#x27;Product not found&#x27;})<br />@ApiBody({schema: undefined})<br />@Post(&#x27;&#x27;)<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="31"
-                                    class="link-to-prism">src/cart/cart.controller.ts:31</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="173"
+                                    class="link-to-prism">src/cart/cart.controller.ts:173</a></div>
                         </td>
                     </tr>
 
@@ -272,6 +310,11 @@
                     <a name="clearUserCart"></a>
                     <span class="name">
                             <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
                         <span ><b>clearUserCart</b></span>
                         <a href="#clearUserCart"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -288,14 +331,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Delete(&#x27;clear&#x27;)<br /></code>
+                    <code>@ApiOperation({summary: &#x27;Clear user cart&#x27;, description: &#x27;Remove all items from the user&#x27;s shopping cart&#x27;})<br />@ApiBearerAuth(&#x27;bearer&#x27;)<br />@ApiResponse({status: 200, description: &#x27;Cart cleared successfully&#x27;, schema: undefined})<br />@ApiResponse({status: 401, description: &#x27;Unauthorized - Invalid or missing authentication token&#x27;})<br />@ApiResponse({status: 404, description: &#x27;Cart not found for the user&#x27;})<br />@Delete(&#x27;clear&#x27;)<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="25"
-                                    class="link-to-prism">src/cart/cart.controller.ts:25</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="65"
+                                    class="link-to-prism">src/cart/cart.controller.ts:65</a></div>
                         </td>
                     </tr>
 
@@ -348,6 +391,14 @@
                     <a name="decrementQuantity"></a>
                     <span class="name">
                             <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
                         <span ><b>decrementQuantity</b></span>
                         <a href="#decrementQuantity"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -364,14 +415,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Patch(&#x27;:cartId&#x27;)<br /></code>
+                    <code>@ApiOperation({summary: &#x27;Update cart item quantity&#x27;, description: &#x27;Update the quantity of a specific item in the user&#x27;s cart&#x27;})<br />@ApiBearerAuth(&#x27;bearer&#x27;)<br />@ApiParam({name: &#x27;cartId&#x27;, type: &#x27;string&#x27;, format: &#x27;uuid&#x27;, description: &#x27;UUID of the cart item to update&#x27;, example: &#x27;ca51605b-4f77-45ff-82c4-8d39d19936b0&#x27;})<br />@ApiResponse({status: 200, description: &#x27;Cart item quantity updated successfully&#x27;, schema: undefined})<br />@ApiResponse({status: 400, description: &#x27;Bad request - Invalid cart item ID or quantity&#x27;})<br />@ApiResponse({status: 401, description: &#x27;Unauthorized - Invalid or missing authentication token&#x27;})<br />@ApiResponse({status: 404, description: &#x27;Cart item not found or does not belong to user&#x27;})<br />@ApiBody({schema: undefined})<br />@Patch(&#x27;:cartId&#x27;)<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="49"
-                                    class="link-to-prism">src/cart/cart.controller.ts:49</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="472"
+                                    class="link-to-prism">src/cart/cart.controller.ts:472</a></div>
                         </td>
                     </tr>
 
@@ -448,6 +499,11 @@
                     <a name="getUserCart"></a>
                     <span class="name">
                             <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
                         <span ><b>getUserCart</b></span>
                         <a href="#getUserCart"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -464,14 +520,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Get(&#x27;&#x27;)<br /></code>
+                    <code>@ApiOperation({summary: &#x27;Get user cart&#x27;, description: &#x27;Retrieve the authenticated user&#x27;s shopping cart with all items, products details, and totals&#x27;})<br />@ApiBearerAuth(&#x27;bearer&#x27;)<br />@ApiResponse({status: 200, description: &#x27;Cart retrieved successfully&#x27;, schema: undefined})<br />@ApiResponse({status: 401, description: &#x27;Unauthorized - Invalid or missing authentication token&#x27;})<br />@ApiResponse({status: 404, description: &#x27;Cart not found for the user&#x27;})<br />@Get(&#x27;&#x27;)<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="36"
-                                    class="link-to-prism">src/cart/cart.controller.ts:36</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="265"
+                                    class="link-to-prism">src/cart/cart.controller.ts:265</a></div>
                         </td>
                     </tr>
 
@@ -524,6 +580,12 @@
                     <a name="removeFromCart"></a>
                     <span class="name">
                             <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
                         <span ><b>removeFromCart</b></span>
                         <a href="#removeFromCart"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -540,14 +602,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Delete(&#x27;:cartId&#x27;)<br /></code>
+                    <code>@ApiOperation({summary: &#x27;Remove item from cart&#x27;, description: &#x27;Remove a specific item from the user&#x27;s shopping cart&#x27;})<br />@ApiBearerAuth(&#x27;bearer&#x27;)<br />@ApiParam({name: &#x27;cartId&#x27;, type: &#x27;string&#x27;, format: &#x27;uuid&#x27;, description: &#x27;UUID of the cart item to remove&#x27;, example: &#x27;52acb271-088a-4609-9953-c874d9bce11d&#x27;})<br />@ApiResponse({status: 200, description: &#x27;Cart item removed successfully. Returns updated cart.&#x27;, schema: undefined})<br />@ApiResponse({status: 401, description: &#x27;Unauthorized - Invalid or missing authentication token&#x27;})<br />@ApiResponse({status: 404, description: &#x27;Cart item not found or does not belong to user&#x27;})<br />@Delete(&#x27;:cartId&#x27;)<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="41"
-                                    class="link-to-prism">src/cart/cart.controller.ts:41</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="362"
+                                    class="link-to-prism">src/cart/cart.controller.ts:362</a></div>
                         </td>
                     </tr>
 
@@ -622,6 +684,13 @@ import { CartService } from &#x27;./providers/cart.service&#x27;;
 import { ActiveUser } from &#x27;src/auth/decorator/active-user.decorator&#x27;;
 import { CreateCartItemDto } from &#x27;./dtos/create-cart-item.dto&#x27;;
 import { UpdateCartItemDto } from &#x27;./dtos/update-cart-item.dto&#x27;;
+import {
+  ApiBearerAuth,
+  ApiBody,
+  ApiOperation,
+  ApiParam,
+  ApiResponse,
+} from &#x27;@nestjs/swagger&#x27;;
 
 @Controller(&#x27;cart&#x27;)
 export class CartController {
@@ -632,22 +701,336 @@ export class CartController {
     private readonly cartService: CartService,
   ) {}
 
+  @ApiOperation({
+    summary: &#x27;Clear user cart&#x27;,
+    description: &quot;Remove all items from the user&#x27;s shopping cart&quot;,
+  })
+  @ApiBearerAuth(&#x27;bearer&#x27;)
+  @ApiResponse({
+    status: 200,
+    description: &#x27;Cart cleared successfully&#x27;,
+    schema: {
+      type: &#x27;object&#x27;,
+      properties: {
+        apiVersion: { type: &#x27;string&#x27;, example: &#x27;1.0.0&#x27; },
+        statusCode: { type: &#x27;number&#x27;, example: 200 },
+        data: {
+          type: &#x27;object&#x27;,
+          properties: {
+            message: {
+              type: &#x27;string&#x27;,
+              example: &#x27;Cart cleared successfully&#x27;,
+            },
+          },
+        },
+      },
+    },
+  })
+  @ApiResponse({
+    status: 401,
+    description: &#x27;Unauthorized - Invalid or missing authentication token&#x27;,
+  })
+  @ApiResponse({
+    status: 404,
+    description: &#x27;Cart not found for the user&#x27;,
+  })
   @Delete(&#x27;clear&#x27;)
   clearUserCart(@ActiveUser(&#x27;sub&#x27;) userId: string) {
     console.log(&#x27;clearing...&#x27;);
     return this.cartService.clearCart(userId);
   }
 
+  @ApiOperation({
+    summary: &#x27;Add item to cart&#x27;,
+    description:
+      &quot;Add a product to the user&#x27;s shopping cart or update quantity if item already exists&quot;,
+  })
+  @ApiBearerAuth(&#x27;bearer&#x27;)
+  @ApiResponse({
+    status: 201,
+    description: &#x27;Item added to cart successfully&#x27;,
+    schema: {
+      type: &#x27;object&#x27;,
+      properties: {
+        apiVersion: { type: &#x27;string&#x27;, example: &#x27;1.0.0&#x27; },
+        statusCode: { type: &#x27;number&#x27;, example: 201 },
+        data: {
+          type: &#x27;object&#x27;,
+          properties: {
+            items: {
+              type: &#x27;array&#x27;,
+              items: {
+                type: &#x27;object&#x27;,
+                properties: {
+                  id: {
+                    type: &#x27;string&#x27;,
+                    format: &#x27;uuid&#x27;,
+                    example: &#x27;ca51605b-4f77-45ff-82c4-8d39d19936b0&#x27;,
+                  },
+                  product: {
+                    type: &#x27;object&#x27;,
+                    properties: {
+                      id: {
+                        type: &#x27;string&#x27;,
+                        format: &#x27;uuid&#x27;,
+                        example: &#x27;229f1a79-fd13-453c-9971-8e6db151de12&#x27;,
+                      },
+                      name: { type: &#x27;string&#x27;, example: &#x27;Ceramic Mug Set&#x27; },
+                      category: { type: &#x27;string&#x27;, example: &#x27;Drinkware&#x27; },
+                      description: {
+                        type: &#x27;string&#x27;,
+                        example:
+                          &#x27;Hand-thrown ceramic mugs crafted from recycled clay...&#x27;,
+                      },
+                      price: { type: &#x27;string&#x27;, example: &#x27;14.00&#x27; },
+                      stock: { type: &#x27;number&#x27;, example: 40 },
+                      imageUrl: {
+                        type: &#x27;string&#x27;,
+                        example: &#x27;https://example.com/image.jpg&#x27;,
+                      },
+                      createdAt: { type: &#x27;string&#x27;, format: &#x27;date-time&#x27; },
+                      updatedAt: { type: &#x27;string&#x27;, format: &#x27;date-time&#x27; },
+                      isDeleted: { type: &#x27;boolean&#x27;, example: false },
+                      deletedAt: {
+                        type: &#x27;string&#x27;,
+                        format: &#x27;date-time&#x27;,
+                        nullable: true,
+                      },
+                      purchaseCount: { type: &#x27;number&#x27;, example: 0 },
+                    },
+                  },
+                  quantity: { type: &#x27;number&#x27;, example: 8 },
+                },
+              },
+            },
+            subtotal: { type: &#x27;number&#x27;, example: 200 },
+            total: { type: &#x27;number&#x27;, example: 200 },
+          },
+        },
+      },
+    },
+  })
+  @ApiResponse({
+    status: 400,
+    description: &#x27;Bad request - Invalid product ID or quantity&#x27;,
+  })
+  @ApiResponse({
+    status: 401,
+    description: &#x27;Unauthorized - Invalid or missing authentication token&#x27;,
+  })
+  @ApiResponse({
+    status: 404,
+    description: &#x27;Product not found&#x27;,
+  })
+  @ApiBody({
+    schema: {
+      type: &#x27;object&#x27;,
+      required: [&#x27;productId&#x27;, &#x27;quantity&#x27;],
+      properties: {
+        productId: {
+          type: &#x27;string&#x27;,
+          format: &#x27;uuid&#x27;,
+          example: &#x27;229f1a79-fd13-453c-9971-8e6db151de12&#x27;,
+          description: &#x27;UUID of the product to add to cart&#x27;,
+        },
+        quantity: {
+          type: &#x27;number&#x27;,
+          example: 7,
+          minimum: 1,
+          description: &#x27;Quantity of the product to add&#x27;,
+        },
+      },
+    },
+  })
   @Post(&#x27;&#x27;)
   addToCart(@ActiveUser(&#x27;sub&#x27;) userId: string, @Body() dto: CreateCartItemDto) {
     return this.cartService.addToCart(userId, dto);
   }
 
+  @ApiOperation({
+    summary: &#x27;Get user cart&#x27;,
+    description:
+      &quot;Retrieve the authenticated user&#x27;s shopping cart with all items, products details, and totals&quot;,
+  })
+  @ApiBearerAuth(&#x27;bearer&#x27;)
+  @ApiResponse({
+    status: 200,
+    description: &#x27;Cart retrieved successfully&#x27;,
+    schema: {
+      type: &#x27;object&#x27;,
+      properties: {
+        apiVersion: { type: &#x27;string&#x27;, example: &#x27;1.0.0&#x27; },
+        statusCode: { type: &#x27;number&#x27;, example: 200 },
+        data: {
+          type: &#x27;object&#x27;,
+          properties: {
+            items: {
+              type: &#x27;array&#x27;,
+              items: {
+                type: &#x27;object&#x27;,
+                properties: {
+                  id: {
+                    type: &#x27;string&#x27;,
+                    format: &#x27;uuid&#x27;,
+                    example: &#x27;72b95b06-0f62-4f80-bf5e-b63a192e5ae0&#x27;,
+                  },
+                  product: {
+                    type: &#x27;object&#x27;,
+                    properties: {
+                      id: {
+                        type: &#x27;string&#x27;,
+                        format: &#x27;uuid&#x27;,
+                        example: &#x27;6351f37e-0bc4-44eb-aab8-7eebaca0c563&#x27;,
+                      },
+                      name: { type: &#x27;string&#x27;, example: &#x27;Eco Sponge Set&#x27; },
+                      category: { type: &#x27;string&#x27;, example: &#x27;Cleaning&#x27; },
+                      description: {
+                        type: &#x27;string&#x27;,
+                        example:
+                          &#x27;Plant-based cellulose sponges that are completely biodegradable...&#x27;,
+                      },
+                      price: { type: &#x27;string&#x27;, example: &#x27;5.50&#x27; },
+                      stock: { type: &#x27;number&#x27;, example: 82 },
+                      imageUrl: {
+                        type: &#x27;string&#x27;,
+                        example: &#x27;https://example.com/image.jpg&#x27;,
+                      },
+                      createdAt: { type: &#x27;string&#x27;, format: &#x27;date-time&#x27; },
+                      updatedAt: { type: &#x27;string&#x27;, format: &#x27;date-time&#x27; },
+                      isDeleted: { type: &#x27;boolean&#x27;, example: false },
+                      deletedAt: {
+                        type: &#x27;string&#x27;,
+                        format: &#x27;date-time&#x27;,
+                        nullable: true,
+                      },
+                      purchaseCount: { type: &#x27;number&#x27;, example: 8 },
+                    },
+                  },
+                  quantity: { type: &#x27;number&#x27;, example: 1 },
+                },
+              },
+            },
+            subtotal: {
+              type: &#x27;number&#x27;,
+              example: 172,
+              description:
+                &#x27;Total price of all items before any discounts or taxes&#x27;,
+            },
+            total: {
+              type: &#x27;number&#x27;,
+              example: 172,
+              description: &#x27;Final total amount for the cart&#x27;,
+            },
+          },
+        },
+      },
+    },
+  })
+  @ApiResponse({
+    status: 401,
+    description: &#x27;Unauthorized - Invalid or missing authentication token&#x27;,
+  })
+  @ApiResponse({
+    status: 404,
+    description: &#x27;Cart not found for the user&#x27;,
+  })
   @Get(&#x27;&#x27;)
   getUserCart(@ActiveUser(&#x27;sub&#x27;) userId: string) {
     return this.cartService.getCart(userId);
   }
 
+  @ApiOperation({
+    summary: &#x27;Remove item from cart&#x27;,
+    description: &quot;Remove a specific item from the user&#x27;s shopping cart&quot;,
+  })
+  @ApiBearerAuth(&#x27;bearer&#x27;)
+  @ApiParam({
+    name: &#x27;cartId&#x27;,
+    type: &#x27;string&#x27;,
+    format: &#x27;uuid&#x27;,
+    description: &#x27;UUID of the cart item to remove&#x27;,
+    example: &#x27;52acb271-088a-4609-9953-c874d9bce11d&#x27;,
+  })
+  @ApiResponse({
+    status: 200,
+    description: &#x27;Cart item removed successfully. Returns updated cart.&#x27;,
+    schema: {
+      type: &#x27;object&#x27;,
+      properties: {
+        apiVersion: { type: &#x27;string&#x27;, example: &#x27;1.0.0&#x27; },
+        statusCode: { type: &#x27;number&#x27;, example: 200 },
+        data: {
+          type: &#x27;object&#x27;,
+          properties: {
+            items: {
+              type: &#x27;array&#x27;,
+              items: {
+                type: &#x27;object&#x27;,
+                properties: {
+                  id: {
+                    type: &#x27;string&#x27;,
+                    format: &#x27;uuid&#x27;,
+                    example: &#x27;ca51605b-4f77-45ff-82c4-8d39d19936b0&#x27;,
+                  },
+                  product: {
+                    type: &#x27;object&#x27;,
+                    properties: {
+                      id: {
+                        type: &#x27;string&#x27;,
+                        format: &#x27;uuid&#x27;,
+                        example: &#x27;229f1a79-fd13-453c-9971-8e6db151de12&#x27;,
+                      },
+                      name: { type: &#x27;string&#x27;, example: &#x27;Ceramic Mug Set&#x27; },
+                      category: { type: &#x27;string&#x27;, example: &#x27;Drinkware&#x27; },
+                      description: {
+                        type: &#x27;string&#x27;,
+                        example:
+                          &#x27;Hand-thrown ceramic mugs crafted from recycled clay...&#x27;,
+                      },
+                      price: { type: &#x27;string&#x27;, example: &#x27;14.00&#x27; },
+                      stock: { type: &#x27;number&#x27;, example: 40 },
+                      imageUrl: {
+                        type: &#x27;string&#x27;,
+                        example: &#x27;https://example.com/image.jpg&#x27;,
+                      },
+                      createdAt: { type: &#x27;string&#x27;, format: &#x27;date-time&#x27; },
+                      updatedAt: { type: &#x27;string&#x27;, format: &#x27;date-time&#x27; },
+                      isDeleted: { type: &#x27;boolean&#x27;, example: false },
+                      deletedAt: {
+                        type: &#x27;string&#x27;,
+                        format: &#x27;date-time&#x27;,
+                        nullable: true,
+                      },
+                      purchaseCount: { type: &#x27;number&#x27;, example: 0 },
+                    },
+                  },
+                  quantity: { type: &#x27;number&#x27;, example: 6 },
+                },
+              },
+            },
+            subtotal: {
+              type: &#x27;number&#x27;,
+              example: 151,
+              description: &#x27;Updated subtotal after item removal&#x27;,
+            },
+            total: {
+              type: &#x27;number&#x27;,
+              example: 151,
+              description: &#x27;Updated total after item removal&#x27;,
+            },
+          },
+        },
+      },
+    },
+  })
+  @ApiResponse({
+    status: 401,
+    description: &#x27;Unauthorized - Invalid or missing authentication token&#x27;,
+  })
+  @ApiResponse({
+    status: 404,
+    description: &#x27;Cart item not found or does not belong to user&#x27;,
+  })
   @Delete(&#x27;:cartId&#x27;)
   removeFromCart(
     @ActiveUser(&#x27;sub&#x27;) userId: string,
@@ -656,6 +1039,108 @@ export class CartController {
     return this.cartService.removeCartItem(userId, cartId);
   }
 
+  @ApiOperation({
+    summary: &#x27;Update cart item quantity&#x27;,
+    description: &quot;Update the quantity of a specific item in the user&#x27;s cart&quot;,
+  })
+  @ApiBearerAuth(&#x27;bearer&#x27;)
+  @ApiParam({
+    name: &#x27;cartId&#x27;,
+    type: &#x27;string&#x27;,
+    format: &#x27;uuid&#x27;,
+    description: &#x27;UUID of the cart item to update&#x27;,
+    example: &#x27;ca51605b-4f77-45ff-82c4-8d39d19936b0&#x27;,
+  })
+  @ApiResponse({
+    status: 200,
+    description: &#x27;Cart item quantity updated successfully&#x27;,
+    schema: {
+      type: &#x27;object&#x27;,
+      properties: {
+        apiVersion: { type: &#x27;string&#x27;, example: &#x27;1.0.0&#x27; },
+        statusCode: { type: &#x27;number&#x27;, example: 200 },
+        data: {
+          type: &#x27;object&#x27;,
+          properties: {
+            items: {
+              type: &#x27;array&#x27;,
+              items: {
+                type: &#x27;object&#x27;,
+                properties: {
+                  id: {
+                    type: &#x27;string&#x27;,
+                    format: &#x27;uuid&#x27;,
+                    example: &#x27;ca51605b-4f77-45ff-82c4-8d39d19936b0&#x27;,
+                  },
+                  product: {
+                    type: &#x27;object&#x27;,
+                    properties: {
+                      id: {
+                        type: &#x27;string&#x27;,
+                        format: &#x27;uuid&#x27;,
+                        example: &#x27;229f1a79-fd13-453c-9971-8e6db151de12&#x27;,
+                      },
+                      name: { type: &#x27;string&#x27;, example: &#x27;Ceramic Mug Set&#x27; },
+                      category: { type: &#x27;string&#x27;, example: &#x27;Drinkware&#x27; },
+                      description: {
+                        type: &#x27;string&#x27;,
+                        example:
+                          &#x27;Hand-thrown ceramic mugs crafted from recycled clay...&#x27;,
+                      },
+                      price: { type: &#x27;string&#x27;, example: &#x27;14.00&#x27; },
+                      stock: { type: &#x27;number&#x27;, example: 40 },
+                      imageUrl: {
+                        type: &#x27;string&#x27;,
+                        example: &#x27;https://example.com/image.jpg&#x27;,
+                      },
+                      createdAt: { type: &#x27;string&#x27;, format: &#x27;date-time&#x27; },
+                      updatedAt: { type: &#x27;string&#x27;, format: &#x27;date-time&#x27; },
+                      isDeleted: { type: &#x27;boolean&#x27;, example: false },
+                      deletedAt: {
+                        type: &#x27;string&#x27;,
+                        format: &#x27;date-time&#x27;,
+                        nullable: true,
+                      },
+                      purchaseCount: { type: &#x27;number&#x27;, example: 0 },
+                    },
+                  },
+                  quantity: { type: &#x27;number&#x27;, example: 2 },
+                },
+              },
+            },
+            subtotal: { type: &#x27;number&#x27;, example: 200 },
+            total: { type: &#x27;number&#x27;, example: 200 },
+          },
+        },
+      },
+    },
+  })
+  @ApiResponse({
+    status: 400,
+    description: &#x27;Bad request - Invalid cart item ID or quantity&#x27;,
+  })
+  @ApiResponse({
+    status: 401,
+    description: &#x27;Unauthorized - Invalid or missing authentication token&#x27;,
+  })
+  @ApiResponse({
+    status: 404,
+    description: &#x27;Cart item not found or does not belong to user&#x27;,
+  })
+  @ApiBody({
+    schema: {
+      type: &#x27;object&#x27;,
+      required: [&#x27;quantity&#x27;],
+      properties: {
+        quantity: {
+          type: &#x27;number&#x27;,
+          example: 2,
+          minimum: 1,
+          description: &#x27;New quantity for the cart item&#x27;,
+        },
+      },
+    },
+  })
   @Patch(&#x27;:cartId&#x27;)
   decrementQuantity(
     @ActiveUser(&#x27;sub&#x27;) userId: string,

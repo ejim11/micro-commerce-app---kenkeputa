@@ -142,15 +142,34 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                     <span class="modifier">Async</span>
                                 <a href="#createOrder" >createOrder</a>
                             </li>
                             <li>
                                     <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                     <span class="modifier">Async</span>
                                 <a href="#getOrder" >getOrder</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                     <span class="modifier"></span>
                                     <span class="modifier">Async</span>
                                 <a href="#getOrders" >getOrders</a>
@@ -179,6 +198,13 @@
                     <a name="createOrder"></a>
                     <span class="name">
                             <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
                             <span class="modifier">Async</span>
                         <span ><b>createOrder</b></span>
                         <a href="#createOrder"><span class="icon ion-ios-link"></span></a>
@@ -196,14 +222,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Post()<br /></code>
+                    <code>@ApiOperation({summary: &#x27;Create order&#x27;, description: &#x27;Create a new order from the user&#x27;s cart items. The cart must not be empty.&#x27;})<br />@ApiBearerAuth(&#x27;bearer&#x27;)<br />@ApiBody({type: CreateOrderDto, schema: undefined})<br />@ApiResponse({status: 201, description: &#x27;Order created successfully&#x27;, schema: undefined})<br />@ApiResponse({status: 400, description: &#x27;Bad request - Invalid input data&#x27;})<br />@ApiResponse({status: 401, description: &#x27;Unauthorized - Invalid or missing authentication token&#x27;})<br />@ApiResponse({status: 409, description: &#x27;Conflict - Cart is empty or insufficient stock&#x27;, schema: undefined})<br />@Post()<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="16"
-                                    class="link-to-prism">src/orders/orders.controller.ts:16</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="158"
+                                    class="link-to-prism">src/orders/orders.controller.ts:158</a></div>
                         </td>
                     </tr>
 
@@ -268,6 +294,13 @@
                     <a name="getOrder"></a>
                     <span class="name">
                             <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
                             <span class="modifier">Async</span>
                         <span ><b>getOrder</b></span>
                         <a href="#getOrder"><span class="icon ion-ios-link"></span></a>
@@ -285,14 +318,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Get(&#x27;:id&#x27;)<br /></code>
+                    <code>@ApiOperation({summary: &#x27;Get order by ID&#x27;, description: &#x27;Retrieve a specific order by its ID with all order items and product details. User can only access their own orders.&#x27;})<br />@ApiBearerAuth(&#x27;bearer&#x27;)<br />@ApiParam({name: &#x27;id&#x27;, type: &#x27;string&#x27;, format: &#x27;uuid&#x27;, description: &#x27;UUID of the order to retrieve&#x27;, example: &#x27;05e08508-afbf-45b5-8e82-767dc90fb7d3&#x27;})<br />@ApiResponse({status: 200, description: &#x27;Order retrieved successfully&#x27;, schema: undefined})<br />@ApiResponse({status: 401, description: &#x27;Unauthorized - Invalid or missing authentication token&#x27;})<br />@ApiResponse({status: 403, description: &#x27;Forbidden - Order does not belong to user&#x27;})<br />@ApiResponse({status: 404, description: &#x27;Order not found&#x27;})<br />@Get(&#x27;:id&#x27;)<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="29"
-                                    class="link-to-prism">src/orders/orders.controller.ts:29</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="457"
+                                    class="link-to-prism">src/orders/orders.controller.ts:457</a></div>
                         </td>
                     </tr>
 
@@ -357,6 +390,11 @@
                     <a name="getOrders"></a>
                     <span class="name">
                             <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
                             <span class="modifier">Async</span>
                         <span ><b>getOrders</b></span>
                         <a href="#getOrders"><span class="icon ion-ios-link"></span></a>
@@ -374,14 +412,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Get()<br /></code>
+                    <code>@ApiOperation({summary: &#x27;Get user orders&#x27;, description: &#x27;Retrieve all orders for the authenticated user with order items and product details&#x27;})<br />@ApiBearerAuth(&#x27;bearer&#x27;)<br />@ApiResponse({status: 200, description: &#x27;Orders retrieved successfully&#x27;, schema: undefined})<br />@ApiResponse({status: 401, description: &#x27;Unauthorized - Invalid or missing authentication token&#x27;})<br />@ApiResponse({status: 404, description: &#x27;No orders found for the user&#x27;})<br />@Get()<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="24"
-                                    class="link-to-prism">src/orders/orders.controller.ts:24</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="307"
+                                    class="link-to-prism">src/orders/orders.controller.ts:307</a></div>
                         </td>
                     </tr>
 
@@ -435,6 +473,13 @@
 import { OrdersService } from &#x27;./providers/orders.service&#x27;;
 import { ActiveUser } from &#x27;src/auth/decorator/active-user.decorator&#x27;;
 import { CreateOrderDto } from &#x27;./dtos/create-order.dto&#x27;;
+import {
+  ApiBearerAuth,
+  ApiBody,
+  ApiOperation,
+  ApiParam,
+  ApiResponse,
+} from &#x27;@nestjs/swagger&#x27;;
 
 @Controller(&#x27;orders&#x27;)
 export class OrdersController {
@@ -445,6 +490,141 @@ export class OrdersController {
     private readonly ordersService: OrdersService,
   ) {}
 
+  @ApiOperation({
+    summary: &#x27;Create order&#x27;,
+    description:
+      &quot;Create a new order from the user&#x27;s cart items. The cart must not be empty.&quot;,
+  })
+  @ApiBearerAuth(&#x27;bearer&#x27;)
+  @ApiBody({
+    type: CreateOrderDto,
+    schema: {
+      type: &#x27;object&#x27;,
+      required: [&#x27;shippingAddress&#x27;, &#x27;billingAddress&#x27;, &#x27;paymentMethod&#x27;],
+      properties: {
+        shippingAddress: {
+          type: &#x27;string&#x27;,
+          example: &#x27;123 Main St, Cityville&#x27;,
+          description: &#x27;Shipping address for the order&#x27;,
+        },
+        billingAddress: {
+          type: &#x27;string&#x27;,
+          example: &#x27;456 Elm St, Townsville&#x27;,
+          description: &#x27;Billing address for the order&#x27;,
+        },
+        paymentMethod: {
+          type: &#x27;string&#x27;,
+          example: &#x27;credit_card&#x27;,
+          description: &#x27;Payment method for the order&#x27;,
+          enum: [&#x27;credit_card&#x27;, &#x27;debit_card&#x27;, &#x27;paypal&#x27;, &#x27;bank_transfer&#x27;],
+        },
+      },
+    },
+  })
+  @ApiResponse({
+    status: 201,
+    description: &#x27;Order created successfully&#x27;,
+    schema: {
+      type: &#x27;object&#x27;,
+      properties: {
+        apiVersion: { type: &#x27;string&#x27;, example: &#x27;1.0.0&#x27; },
+        statusCode: { type: &#x27;number&#x27;, example: 201 },
+        data: {
+          type: &#x27;object&#x27;,
+          properties: {
+            id: {
+              type: &#x27;string&#x27;,
+              format: &#x27;uuid&#x27;,
+              example: &#x27;0c125a6a-e1c8-45b5-87f2-a1978d6f4de0&#x27;,
+            },
+            total: {
+              type: &#x27;number&#x27;,
+              example: 11,
+              description: &#x27;Total order amount&#x27;,
+            },
+            shippingAddress: {
+              type: &#x27;string&#x27;,
+              example: &#x27;123 Main St, Cityville&#x27;,
+            },
+            billingAddress: {
+              type: &#x27;string&#x27;,
+              example: &#x27;456 Elm St, Townsville&#x27;,
+            },
+            paymentMethod: {
+              type: &#x27;string&#x27;,
+              example: &#x27;credit_card&#x27;,
+            },
+            status: {
+              type: &#x27;string&#x27;,
+              example: &#x27;pending&#x27;,
+              description: &#x27;Current order status&#x27;,
+            },
+            user: {
+              type: &#x27;object&#x27;,
+              properties: {
+                id: {
+                  type: &#x27;string&#x27;,
+                  format: &#x27;uuid&#x27;,
+                  example: &#x27;b42241bc-6ff9-451c-afb5-2fc77d7b0e01&#x27;,
+                },
+                firstname: { type: &#x27;string&#x27;, example: &#x27;Ejim&#x27; },
+                lastname: { type: &#x27;string&#x27;, example: &#x27;Favour&#x27; },
+                email: { type: &#x27;string&#x27;, example: &#x27;favour@gmail.com&#x27; },
+                role: { type: &#x27;string&#x27;, example: &#x27;user&#x27; },
+                createdAt: { type: &#x27;string&#x27;, format: &#x27;date-time&#x27; },
+                updatedAt: { type: &#x27;string&#x27;, format: &#x27;date-time&#x27; },
+              },
+            },
+            createdAt: { type: &#x27;string&#x27;, format: &#x27;date-time&#x27; },
+            updatedAt: { type: &#x27;string&#x27;, format: &#x27;date-time&#x27; },
+          },
+        },
+      },
+    },
+  })
+  @ApiResponse({
+    status: 400,
+    description: &#x27;Bad request - Invalid input data&#x27;,
+  })
+  @ApiResponse({
+    status: 401,
+    description: &#x27;Unauthorized - Invalid or missing authentication token&#x27;,
+  })
+  @ApiResponse({
+    status: 409,
+    description: &#x27;Conflict - Cart is empty or insufficient stock&#x27;,
+    schema: {
+      type: &#x27;object&#x27;,
+      properties: {
+        statusCode: { type: &#x27;number&#x27;, example: 409 },
+        timestamp: { type: &#x27;string&#x27;, format: &#x27;date-time&#x27; },
+        path: { type: &#x27;string&#x27;, example: &#x27;/api/v1/orders&#x27; },
+        method: { type: &#x27;string&#x27;, example: &#x27;POST&#x27; },
+        controller: { type: &#x27;string&#x27;, example: &#x27;OrdersController&#x27; },
+        handler: { type: &#x27;string&#x27;, example: &#x27;postOrders&#x27; },
+        errorType: { type: &#x27;string&#x27;, example: &#x27;ConflictException&#x27; },
+        errorCode: { type: &#x27;string&#x27;, example: &#x27;ERR_CONFLICT&#x27; },
+        message: {
+          type: &#x27;string&#x27;,
+          example: &#x27;Could not complete the transaction&#x27;,
+        },
+        details: {
+          type: &#x27;object&#x27;,
+          properties: {
+            message: {
+              type: &#x27;string&#x27;,
+              example: &#x27;Could not complete the transaction&#x27;,
+            },
+            error: {
+              type: &#x27;string&#x27;,
+              example: &#x27;ConflictException: Cart is empty&#x27;,
+            },
+            statusCode: { type: &#x27;number&#x27;, example: 409 },
+          },
+        },
+      },
+    },
+  })
   @Post()
   async createOrder(
     @ActiveUser(&#x27;sub&#x27;) userId: string,
@@ -453,11 +633,297 @@ export class OrdersController {
     return this.ordersService.createOrder(userId, createOrderDto);
   }
 
+  @ApiOperation({
+    summary: &#x27;Get user orders&#x27;,
+    description:
+      &#x27;Retrieve all orders for the authenticated user with order items and product details&#x27;,
+  })
+  @ApiBearerAuth(&#x27;bearer&#x27;)
+  @ApiResponse({
+    status: 200,
+    description: &#x27;Orders retrieved successfully&#x27;,
+    schema: {
+      type: &#x27;object&#x27;,
+      properties: {
+        apiVersion: { type: &#x27;string&#x27;, example: &#x27;1.0.0&#x27; },
+        statusCode: { type: &#x27;number&#x27;, example: 200 },
+        data: {
+          type: &#x27;array&#x27;,
+          items: {
+            type: &#x27;object&#x27;,
+            properties: {
+              id: {
+                type: &#x27;string&#x27;,
+                format: &#x27;uuid&#x27;,
+                example: &#x27;05e08508-afbf-45b5-8e82-767dc90fb7d3&#x27;,
+              },
+              total: {
+                type: &#x27;string&#x27;,
+                example: &#x27;14.00&#x27;,
+                description: &#x27;Total order amount&#x27;,
+              },
+              status: {
+                type: &#x27;string&#x27;,
+                example: &#x27;pending&#x27;,
+                description: &#x27;Current order status&#x27;,
+                enum: [
+                  &#x27;pending&#x27;,
+                  &#x27;processing&#x27;,
+                  &#x27;shipped&#x27;,
+                  &#x27;delivered&#x27;,
+                  &#x27;cancelled&#x27;,
+                ],
+              },
+              shippingAddress: {
+                type: &#x27;string&#x27;,
+                example: &#x27;33 Main St, Cityville&#x27;,
+              },
+              billingAddress: {
+                type: &#x27;string&#x27;,
+                example: &#x27;12 Elm St, Townsville&#x27;,
+              },
+              paymentMethod: {
+                type: &#x27;string&#x27;,
+                example: &#x27;credit_card&#x27;,
+              },
+              createdAt: {
+                type: &#x27;string&#x27;,
+                format: &#x27;date-time&#x27;,
+                example: &#x27;2025-10-16T17:20:05.293Z&#x27;,
+              },
+              updatedAt: {
+                type: &#x27;string&#x27;,
+                format: &#x27;date-time&#x27;,
+                example: &#x27;2025-10-16T17:20:05.293Z&#x27;,
+              },
+              items: {
+                type: &#x27;array&#x27;,
+                items: {
+                  type: &#x27;object&#x27;,
+                  properties: {
+                    id: {
+                      type: &#x27;string&#x27;,
+                      format: &#x27;uuid&#x27;,
+                      example: &#x27;736a1968-b6e7-49dc-be55-faa187539155&#x27;,
+                    },
+                    quantity: {
+                      type: &#x27;number&#x27;,
+                      example: 1,
+                      description: &#x27;Quantity of the product in this order&#x27;,
+                    },
+                    price: {
+                      type: &#x27;string&#x27;,
+                      example: &#x27;14.00&#x27;,
+                      description: &#x27;Price of the product at time of order&#x27;,
+                    },
+                    product: {
+                      type: &#x27;object&#x27;,
+                      properties: {
+                        id: {
+                          type: &#x27;string&#x27;,
+                          format: &#x27;uuid&#x27;,
+                          example: &#x27;229f1a79-fd13-453c-9971-8e6db151de12&#x27;,
+                        },
+                        name: { type: &#x27;string&#x27;, example: &#x27;Ceramic Mug Set&#x27; },
+                        category: { type: &#x27;string&#x27;, example: &#x27;Drinkware&#x27; },
+                        description: {
+                          type: &#x27;string&#x27;,
+                          example:
+                            &#x27;Hand-thrown ceramic mugs crafted from recycled clay...&#x27;,
+                        },
+                        price: {
+                          type: &#x27;string&#x27;,
+                          example: &#x27;14.00&#x27;,
+                          description: &#x27;Current price of the product&#x27;,
+                        },
+                        stock: { type: &#x27;number&#x27;, example: 39 },
+                        imageUrl: {
+                          type: &#x27;string&#x27;,
+                          example: &#x27;https://example.com/image.jpg&#x27;,
+                        },
+                        createdAt: { type: &#x27;string&#x27;, format: &#x27;date-time&#x27; },
+                        updatedAt: { type: &#x27;string&#x27;, format: &#x27;date-time&#x27; },
+                        isDeleted: { type: &#x27;boolean&#x27;, example: false },
+                        deletedAt: {
+                          type: &#x27;string&#x27;,
+                          format: &#x27;date-time&#x27;,
+                          nullable: true,
+                        },
+                        purchaseCount: {
+                          type: &#x27;number&#x27;,
+                          example: 1,
+                          description:
+                            &#x27;Total number of times this product has been purchased&#x27;,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  })
+  @ApiResponse({
+    status: 401,
+    description: &#x27;Unauthorized - Invalid or missing authentication token&#x27;,
+  })
+  @ApiResponse({
+    status: 404,
+    description: &#x27;No orders found for the user&#x27;,
+  })
   @Get()
   async getOrders(@ActiveUser(&#x27;sub&#x27;) userId: string) {
     return this.ordersService.findAllOrders(userId);
   }
 
+  @ApiOperation({
+    summary: &#x27;Get order by ID&#x27;,
+    description:
+      &#x27;Retrieve a specific order by its ID with all order items and product details. User can only access their own orders.&#x27;,
+  })
+  @ApiBearerAuth(&#x27;bearer&#x27;)
+  @ApiParam({
+    name: &#x27;id&#x27;,
+    type: &#x27;string&#x27;,
+    format: &#x27;uuid&#x27;,
+    description: &#x27;UUID of the order to retrieve&#x27;,
+    example: &#x27;05e08508-afbf-45b5-8e82-767dc90fb7d3&#x27;,
+  })
+  @ApiResponse({
+    status: 200,
+    description: &#x27;Order retrieved successfully&#x27;,
+    schema: {
+      type: &#x27;object&#x27;,
+      properties: {
+        apiVersion: { type: &#x27;string&#x27;, example: &#x27;1.0.0&#x27; },
+        statusCode: { type: &#x27;number&#x27;, example: 200 },
+        data: {
+          type: &#x27;object&#x27;,
+          properties: {
+            id: {
+              type: &#x27;string&#x27;,
+              format: &#x27;uuid&#x27;,
+              example: &#x27;05e08508-afbf-45b5-8e82-767dc90fb7d3&#x27;,
+            },
+            total: {
+              type: &#x27;string&#x27;,
+              example: &#x27;14.00&#x27;,
+              description: &#x27;Total order amount&#x27;,
+            },
+            status: {
+              type: &#x27;string&#x27;,
+              example: &#x27;pending&#x27;,
+              description: &#x27;Current order status&#x27;,
+              enum: [
+                &#x27;pending&#x27;,
+                &#x27;processing&#x27;,
+                &#x27;shipped&#x27;,
+                &#x27;delivered&#x27;,
+                &#x27;cancelled&#x27;,
+              ],
+            },
+            shippingAddress: {
+              type: &#x27;string&#x27;,
+              example: &#x27;33 Main St, Cityville&#x27;,
+            },
+            billingAddress: {
+              type: &#x27;string&#x27;,
+              example: &#x27;12 Elm St, Townsville&#x27;,
+            },
+            paymentMethod: {
+              type: &#x27;string&#x27;,
+              example: &#x27;credit_card&#x27;,
+            },
+            createdAt: {
+              type: &#x27;string&#x27;,
+              format: &#x27;date-time&#x27;,
+              example: &#x27;2025-10-16T17:20:05.293Z&#x27;,
+            },
+            updatedAt: {
+              type: &#x27;string&#x27;,
+              format: &#x27;date-time&#x27;,
+              example: &#x27;2025-10-16T17:20:05.293Z&#x27;,
+            },
+            items: {
+              type: &#x27;array&#x27;,
+              items: {
+                type: &#x27;object&#x27;,
+                properties: {
+                  id: {
+                    type: &#x27;string&#x27;,
+                    format: &#x27;uuid&#x27;,
+                    example: &#x27;736a1968-b6e7-49dc-be55-faa187539155&#x27;,
+                  },
+                  quantity: {
+                    type: &#x27;number&#x27;,
+                    example: 1,
+                    description: &#x27;Quantity of the product in this order&#x27;,
+                  },
+                  price: {
+                    type: &#x27;string&#x27;,
+                    example: &#x27;14.00&#x27;,
+                    description: &#x27;Price of the product at time of order&#x27;,
+                  },
+                  product: {
+                    type: &#x27;object&#x27;,
+                    properties: {
+                      id: {
+                        type: &#x27;string&#x27;,
+                        format: &#x27;uuid&#x27;,
+                        example: &#x27;229f1a79-fd13-453c-9971-8e6db151de12&#x27;,
+                      },
+                      name: { type: &#x27;string&#x27;, example: &#x27;Ceramic Mug Set&#x27; },
+                      category: { type: &#x27;string&#x27;, example: &#x27;Drinkware&#x27; },
+                      description: {
+                        type: &#x27;string&#x27;,
+                        example:
+                          &#x27;Hand-thrown ceramic mugs crafted from recycled clay...&#x27;,
+                      },
+                      price: {
+                        type: &#x27;string&#x27;,
+                        example: &#x27;14.00&#x27;,
+                        description: &#x27;Current price of the product&#x27;,
+                      },
+                      stock: { type: &#x27;number&#x27;, example: 39 },
+                      imageUrl: {
+                        type: &#x27;string&#x27;,
+                        example:
+                          &#x27;https://m.media-amazon.com/images/I/61a2v30mxOL.jpg&#x27;,
+                      },
+                      createdAt: { type: &#x27;string&#x27;, format: &#x27;date-time&#x27; },
+                      updatedAt: { type: &#x27;string&#x27;, format: &#x27;date-time&#x27; },
+                      isDeleted: { type: &#x27;boolean&#x27;, example: false },
+                      deletedAt: {
+                        type: &#x27;string&#x27;,
+                        format: &#x27;date-time&#x27;,
+                        nullable: true,
+                      },
+                      purchaseCount: { type: &#x27;number&#x27;, example: 1 },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  })
+  @ApiResponse({
+    status: 401,
+    description: &#x27;Unauthorized - Invalid or missing authentication token&#x27;,
+  })
+  @ApiResponse({
+    status: 403,
+    description: &#x27;Forbidden - Order does not belong to user&#x27;,
+  })
+  @ApiResponse({
+    status: 404,
+    description: &#x27;Order not found&#x27;,
+  })
   @Get(&#x27;:id&#x27;)
   async getOrder(
     @ActiveUser(&#x27;sub&#x27;) userId: string,

@@ -307,7 +307,7 @@ export class FindUserByEmailProvider {
    */
   public async findUserByEmail(email: string): Promise&lt;User&gt; {
     const user &#x3D; await this.usersRepository.findOne({
-      where: { email },
+      where: { email: email.toLowerCase() },
       select: [&#x27;id&#x27;, &#x27;password&#x27;, &#x27;email&#x27;, &#x27;role&#x27;, &#x27;firstname&#x27;, &#x27;lastname&#x27;],
     });
 

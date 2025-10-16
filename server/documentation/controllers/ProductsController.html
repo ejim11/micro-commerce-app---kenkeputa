@@ -143,9 +143,23 @@
                             <li>
                                     <span class="modifier"></span>
                                     <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                 <a href="#createProduct" >createProduct</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                     <span class="modifier"></span>
                                     <span class="modifier"></span>
                                 <a href="#deleteProduct" >deleteProduct</a>
@@ -153,9 +167,26 @@
                             <li>
                                     <span class="modifier"></span>
                                     <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                 <a href="#findAllProducts" >findAllProducts</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                     <span class="modifier"></span>
                                     <span class="modifier"></span>
                                 <a href="#updateProduct" >updateProduct</a>
@@ -185,6 +216,13 @@
                     <span class="name">
                             <span class="modifier"></span>
                             <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
                         <span ><b>createProduct</b></span>
                         <a href="#createProduct"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -201,14 +239,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Post(&#x27;&#x27;)<br />@Roles(Role.ADMIN)<br /></code>
+                    <code>@ApiBearerAuth(&#x27;bearer&#x27;)<br />@ApiOperation({summary: &#x27;Create a new product&#x27;, description: &#x27;Creates a new product. Only accessible by admin users. Requires a valid JWT token.&#x27;})<br />@ApiBody({description: &#x27;Product creation data&#x27;, required: true, type: CreateProductDto, examples: undefined})<br />@ApiResponse({status: 201, description: &#x27;Product created successfully&#x27;, type: Product, example: undefined})<br />@ApiResponse({status: 400, description: &#x27;Bad request - Invalid product data&#x27;, example: undefined})<br />@ApiResponse({status: 401, description: &#x27;Unauthorized - Missing or invalid JWT token&#x27;, example: undefined})<br />@ApiResponse({status: 403, description: &#x27;Forbidden - User does not have admin role&#x27;, example: undefined})<br />@Post(&#x27;&#x27;)<br />@Roles(Role.ADMIN)<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="33"
-                                    class="link-to-prism">src/products/products.controller.ts:33</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="114"
+                                    class="link-to-prism">src/products/products.controller.ts:114</a></div>
                         </td>
                     </tr>
 
@@ -262,6 +300,13 @@
                     <span class="name">
                             <span class="modifier"></span>
                             <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
                         <span ><b>deleteProduct</b></span>
                         <a href="#deleteProduct"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -278,14 +323,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Roles(Role.ADMIN)<br />@Delete(&#x27;:productid&#x27;)<br /></code>
+                    <code>@ApiBearerAuth(&#x27;bearer&#x27;)<br />@ApiOperation({summary: &#x27;Delete a product&#x27;, description: &#x27;Soft deletes a product by ID. The product data is retained in the database but marked as deleted. Only accessible by admin users.&#x27;})<br />@ApiParam({name: &#x27;productid&#x27;, type: &#x27;string&#x27;, format: &#x27;uuid&#x27;, description: &#x27;The unique identifier of the product to delete&#x27;, example: &#x27;a48ac60f-b091-4ac5-9685-fe9aec69d2b3&#x27;})<br />@ApiResponse({status: 200, description: &#x27;Product deleted successfully&#x27;, example: undefined})<br />@ApiResponse({status: 401, description: &#x27;Unauthorized - Missing or invalid JWT token&#x27;, example: undefined})<br />@ApiResponse({status: 403, description: &#x27;Forbidden - User does not have admin role&#x27;, example: undefined})<br />@ApiResponse({status: 404, description: &#x27;Product not found&#x27;, example: undefined})<br />@Roles(Role.ADMIN)<br />@Delete(&#x27;:productid&#x27;)<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="57"
-                                    class="link-to-prism">src/products/products.controller.ts:57</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="422"
+                                    class="link-to-prism">src/products/products.controller.ts:422</a></div>
                         </td>
                     </tr>
 
@@ -339,6 +384,14 @@
                     <span class="name">
                             <span class="modifier"></span>
                             <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
                         <span ><b>findAllProducts</b></span>
                         <a href="#findAllProducts"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -355,14 +408,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Auth(AuthType.None)<br />@Get(&#x27;&#x27;)<br /></code>
+                    <code>@ApiOperation({summary: &#x27;Get all products&#x27;, description: &#x27;Retrieve a paginated list of all products with optional filtering and sorting&#x27;})<br />@ApiResponse({status: 200, description: &#x27;Products retrieved successfully&#x27;, schema: undefined})<br />@ApiQuery({name: &#x27;page&#x27;, required: false, type: Number, description: &#x27;Page number&#x27;, example: 1})<br />@ApiQuery({name: &#x27;limit&#x27;, required: false, type: Number, description: &#x27;Items per page&#x27;, example: 10})<br />@ApiQuery({name: &#x27;category&#x27;, required: false, type: String, description: &#x27;Filter by category&#x27;, example: &#x27;Utensils&#x27;})<br />@ApiQuery({name: &#x27;search&#x27;, required: false, type: String, description: &#x27;Search products by name or description&#x27;})<br />@ApiQuery({name: &#x27;sortBy&#x27;, required: false, type: String, description: &#x27;Sort by field&#x27;, example: &#x27;price&#x27;})<br />@ApiQuery({name: &#x27;sortOrder&#x27;, required: false, enum: undefined, description: &#x27;Sort order&#x27;})<br />@Auth(AuthType.None)<br />@Get(&#x27;&#x27;)<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="39"
-                                    class="link-to-prism">src/products/products.controller.ts:39</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="255"
+                                    class="link-to-prism">src/products/products.controller.ts:255</a></div>
                         </td>
                     </tr>
 
@@ -416,6 +469,15 @@
                     <span class="name">
                             <span class="modifier"></span>
                             <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
                         <span ><b>updateProduct</b></span>
                         <a href="#updateProduct"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -432,14 +494,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Roles(Role.ADMIN)<br />@Patch(&#x27;:productid&#x27;)<br /></code>
+                    <code>@ApiBearerAuth(&#x27;bearer&#x27;)<br />@ApiOperation({summary: &#x27;Update a product&#x27;, description: &#x27;Updates product details by ID. Only accessible by admin users. Supports partial updates.&#x27;})<br />@ApiParam({name: &#x27;productid&#x27;, type: &#x27;string&#x27;, format: &#x27;uuid&#x27;, description: &#x27;The unique identifier of the product to update&#x27;, example: &#x27;a48ac60f-b091-4ac5-9685-fe9aec69d2b3&#x27;})<br />@ApiBody({description: &#x27;Product update data (all fields are optional)&#x27;, type: UpdateProductDto, examples: undefined})<br />@ApiResponse({status: 200, description: &#x27;Product updated successfully&#x27;, type: Product, example: undefined})<br />@ApiResponse({status: 400, description: &#x27;Bad request - Invalid product data&#x27;, example: undefined})<br />@ApiResponse({status: 401, description: &#x27;Unauthorized - Missing or invalid JWT token&#x27;, example: undefined})<br />@ApiResponse({status: 403, description: &#x27;Forbidden - User does not have admin role&#x27;, example: undefined})<br />@ApiResponse({status: 404, description: &#x27;Product not found&#x27;, example: undefined})<br />@Roles(Role.ADMIN)<br />@Patch(&#x27;:productid&#x27;)<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="47"
-                                    class="link-to-prism">src/products/products.controller.ts:47</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="364"
+                                    class="link-to-prism">src/products/products.controller.ts:364</a></div>
                         </td>
                     </tr>
 
@@ -521,6 +583,14 @@ import { Product } from &#x27;./product.entity&#x27;;
 import { GetProductsDto } from &#x27;./dtos/get-products.dto&#x27;;
 import { Paginated } from &#x27;../common/pagination/interfaces/paginated.interface&#x27;;
 import { UpdateProductDto } from &#x27;./dtos/update-product.dto&#x27;;
+import {
+  ApiBearerAuth,
+  ApiBody,
+  ApiOperation,
+  ApiParam,
+  ApiQuery,
+  ApiResponse,
+} from &#x27;@nestjs/swagger&#x27;;
 
 @Controller(&#x27;products&#x27;)
 export class ProductsController {
@@ -531,12 +601,220 @@ export class ProductsController {
     private readonly productsService: ProductsService,
   ) {}
 
+  @ApiBearerAuth(&#x27;bearer&#x27;)
+  @ApiOperation({
+    summary: &#x27;Create a new product&#x27;,
+    description:
+      &#x27;Creates a new product. Only accessible by admin users. Requires a valid JWT token.&#x27;,
+  })
+  @ApiBody({
+    description: &#x27;Product creation data&#x27;,
+    required: true,
+    type: CreateProductDto,
+    examples: {
+      validUser: {
+        summary: &#x27;valid user response&#x27;,
+        value: {
+          name: &#x27;Dark Silver Cutlery Set&#x27;,
+          category: &#x27;Utensils&#x27;,
+          description:
+            &#x27;Sustainable fork, knife, spoon set – zero plastic waste.&#x27;,
+          price: 25.0,
+          stock: 20,
+          imageUrl: &#x27;https://m.media-amazon.com/images/I/71ovT+ReiYL.jpg&#x27;,
+        },
+      },
+    },
+  })
+  @ApiResponse({
+    status: 201,
+    description: &#x27;Product created successfully&#x27;,
+    type: Product,
+    example: {
+      id: &#x27;c53808b8-fb98-4c26-abbe-c07c263f161c&#x27;,
+      name: &#x27;Dark Silver Cutlery Set&#x27;,
+      category: &#x27;Utensils&#x27;,
+      description: &#x27;Sustainable fork, knife, spoon set – zero plastic waste.&#x27;,
+      price: 25,
+      stock: 20,
+      imageUrl: &#x27;https://m.media-amazon.com/images/I/71ovT+ReiYL.jpg&#x27;,
+      createdAt: &#x27;2025-10-16T09:13:11.702Z&#x27;,
+      updatedAt: &#x27;2025-10-16T09:13:11.702Z&#x27;,
+      deletedAt: null,
+      isDeleted: false,
+      purchaseCount: 0,
+    },
+  })
+  @ApiResponse({
+    status: 400,
+    description: &#x27;Bad request - Invalid product data&#x27;,
+    example: {
+      apiVersion: &#x27;1.0.0&#x27;,
+      statusCode: 400,
+      message: &#x27;Validation failed&#x27;,
+      errors: [
+        &#x27;price must be a positive number&#x27;,
+        &#x27;stock must be a positive integer&#x27;,
+      ],
+    },
+  })
+  @ApiResponse({
+    status: 401,
+    description: &#x27;Unauthorized - Missing or invalid JWT token&#x27;,
+    example: {
+      statusCode: 401,
+      message: &#x27;Unauthorized&#x27;,
+    },
+  })
+  @ApiResponse({
+    status: 403,
+    description: &#x27;Forbidden - User does not have admin role&#x27;,
+    example: {
+      statusCode: 403,
+      message: &#x27;Insufficient permissions&#x27;,
+    },
+  })
   @Post(&#x27;&#x27;)
   @Roles(Role.ADMIN)
   createProduct(@Body() createProductDto: CreateProductDto): Promise&lt;Product&gt; {
     return this.productsService.createProduct(createProductDto);
   }
 
+  @ApiOperation({
+    summary: &#x27;Get all products&#x27;,
+    description:
+      &#x27;Retrieve a paginated list of all products with optional filtering and sorting&#x27;,
+  })
+  @ApiResponse({
+    status: 200,
+    description: &#x27;Products retrieved successfully&#x27;,
+    schema: {
+      type: &#x27;object&#x27;,
+      properties: {
+        apiVersion: { type: &#x27;string&#x27;, example: &#x27;1.0.0&#x27; },
+        statusCode: { type: &#x27;number&#x27;, example: 200 },
+        data: {
+          type: &#x27;object&#x27;,
+          properties: {
+            data: {
+              type: &#x27;array&#x27;,
+              items: {
+                type: &#x27;object&#x27;,
+                properties: {
+                  id: {
+                    type: &#x27;string&#x27;,
+                    format: &#x27;uuid&#x27;,
+                    example: &#x27;727d2e00-7237-4b58-bd28-f3b7eaedb2b3&#x27;,
+                  },
+                  name: { type: &#x27;string&#x27;, example: &#x27;Gold Cutlery Set&#x27; },
+                  category: { type: &#x27;string&#x27;, example: &#x27;Utensils&#x27; },
+                  description: {
+                    type: &#x27;string&#x27;,
+                    example:
+                      &#x27;Sustainable fork, knife, spoon set – zero plastic waste.&#x27;,
+                  },
+                  price: { type: &#x27;string&#x27;, example: &#x27;60.00&#x27; },
+                  stock: { type: &#x27;number&#x27;, example: 10 },
+                  imageUrl: {
+                    type: &#x27;string&#x27;,
+                    example: &#x27;https://example.com/image.jpg&#x27;,
+                  },
+                  createdAt: { type: &#x27;string&#x27;, format: &#x27;date-time&#x27; },
+                  updatedAt: { type: &#x27;string&#x27;, format: &#x27;date-time&#x27; },
+                  isDeleted: { type: &#x27;boolean&#x27;, example: false },
+                  deletedAt: {
+                    type: &#x27;string&#x27;,
+                    format: &#x27;date-time&#x27;,
+                    nullable: true,
+                  },
+                  purchaseCount: { type: &#x27;number&#x27;, example: 0 },
+                },
+              },
+            },
+            meta: {
+              type: &#x27;object&#x27;,
+              properties: {
+                itemsPerPage: { type: &#x27;number&#x27;, example: 10 },
+                totalItems: { type: &#x27;number&#x27;, example: 40 },
+                currentPage: { type: &#x27;number&#x27;, example: 1 },
+                totalPages: { type: &#x27;number&#x27;, example: 4 },
+              },
+            },
+            links: {
+              type: &#x27;object&#x27;,
+              properties: {
+                first: {
+                  type: &#x27;string&#x27;,
+                  example:
+                    &#x27;http://localhost:3001/api/v1/products?limit&#x3D;10&amp;page&#x3D;1&#x27;,
+                },
+                last: {
+                  type: &#x27;string&#x27;,
+                  example:
+                    &#x27;http://localhost:3001/api/v1/products?limit&#x3D;10&amp;page&#x3D;4&#x27;,
+                },
+                current: {
+                  type: &#x27;string&#x27;,
+                  example:
+                    &#x27;http://localhost:3001/api/v1/products?limit&#x3D;10&amp;page&#x3D;1&#x27;,
+                },
+                next: {
+                  type: &#x27;string&#x27;,
+                  example:
+                    &#x27;http://localhost:3001/api/v1/products?limit&#x3D;10&amp;page&#x3D;2&#x27;,
+                },
+                previous: {
+                  type: &#x27;string&#x27;,
+                  example:
+                    &#x27;http://localhost:3001/api/v1/products?limit&#x3D;10&amp;page&#x3D;1&#x27;,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  })
+  @ApiQuery({
+    name: &#x27;page&#x27;,
+    required: false,
+    type: Number,
+    description: &#x27;Page number&#x27;,
+    example: 1,
+  })
+  @ApiQuery({
+    name: &#x27;limit&#x27;,
+    required: false,
+    type: Number,
+    description: &#x27;Items per page&#x27;,
+    example: 10,
+  })
+  @ApiQuery({
+    name: &#x27;category&#x27;,
+    required: false,
+    type: String,
+    description: &#x27;Filter by category&#x27;,
+    example: &#x27;Utensils&#x27;,
+  })
+  @ApiQuery({
+    name: &#x27;search&#x27;,
+    required: false,
+    type: String,
+    description: &#x27;Search products by name or description&#x27;,
+  })
+  @ApiQuery({
+    name: &#x27;sortBy&#x27;,
+    required: false,
+    type: String,
+    description: &#x27;Sort by field&#x27;,
+    example: &#x27;price&#x27;,
+  })
+  @ApiQuery({
+    name: &#x27;sortOrder&#x27;,
+    required: false,
+    enum: [&#x27;ASC&#x27;, &#x27;DESC&#x27;],
+    description: &#x27;Sort order&#x27;,
+  })
   @Auth(AuthType.None)
   @Get(&#x27;&#x27;)
   findAllProducts(
@@ -545,6 +823,107 @@ export class ProductsController {
     return this.productsService.findAllProducts(productsQuery);
   }
 
+  @ApiBearerAuth(&#x27;bearer&#x27;)
+  @ApiOperation({
+    summary: &#x27;Update a product&#x27;,
+    description:
+      &#x27;Updates product details by ID. Only accessible by admin users. Supports partial updates.&#x27;,
+  })
+  @ApiParam({
+    name: &#x27;productid&#x27;,
+    type: &#x27;string&#x27;,
+    format: &#x27;uuid&#x27;,
+    description: &#x27;The unique identifier of the product to update&#x27;,
+    example: &#x27;a48ac60f-b091-4ac5-9685-fe9aec69d2b3&#x27;,
+  })
+  @ApiBody({
+    description: &#x27;Product update data (all fields are optional)&#x27;,
+    type: UpdateProductDto,
+    examples: {
+      updateStock: {
+        value: {
+          stock: 50,
+        },
+        description: &#x27;Update only stock quantity&#x27;,
+      },
+      updatePrice: {
+        value: {
+          price: 12.99,
+        },
+        description: &#x27;Update only price&#x27;,
+      },
+      updateAll: {
+        value: {
+          name: &#x27;Silicone Muffin Cups&#x27;,
+          category: &#x27;Baking&#x27;,
+          description: &#x27;Food-grade silicone baking cups...&#x27;,
+          price: 9.99,
+          stock: 50,
+          imageUrl:
+            &#x27;https://images-na.ssl-images-amazon.com/images/I/61VGTeKVpqL.jpg&#x27;,
+        },
+        description: &#x27;Update multiple fields&#x27;,
+      },
+    },
+  })
+  @ApiResponse({
+    status: 200,
+    description: &#x27;Product updated successfully&#x27;,
+    type: Product,
+    example: {
+      id: &#x27;a48ac60f-b091-4ac5-9685-fe9aec69d2b3&#x27;,
+      name: &#x27;Silicone Muffin Cups&#x27;,
+      category: &#x27;Baking&#x27;,
+      description:
+        &#x27;Food-grade silicone baking cups that are oven-safe up to 450°F...&#x27;,
+      price: &#x27;9.00&#x27;,
+      stock: 50,
+      imageUrl:
+        &#x27;https://images-na.ssl-images-amazon.com/images/I/61VGTeKVpqL.jpg&#x27;,
+      createdAt: &#x27;2025-10-15T04:32:09.837Z&#x27;,
+      updatedAt: &#x27;2025-10-16T09:35:37.131Z&#x27;,
+      isDeleted: false,
+      deletedAt: null,
+      purchaseCount: 0,
+    },
+  })
+  @ApiResponse({
+    status: 400,
+    description: &#x27;Bad request - Invalid product data&#x27;,
+    example: {
+      apiVersion: &#x27;1.0.0&#x27;,
+      statusCode: 400,
+      message: &#x27;Validation failed&#x27;,
+      errors: [
+        &#x27;price must be a positive number&#x27;,
+        &#x27;stock must be a positive integer&#x27;,
+      ],
+    },
+  })
+  @ApiResponse({
+    status: 401,
+    description: &#x27;Unauthorized - Missing or invalid JWT token&#x27;,
+    example: {
+      statusCode: 401,
+      message: &#x27;Unauthorized&#x27;,
+    },
+  })
+  @ApiResponse({
+    status: 403,
+    description: &#x27;Forbidden - User does not have admin role&#x27;,
+    example: {
+      statusCode: 403,
+      message: &#x27;Insufficient permissions&#x27;,
+    },
+  })
+  @ApiResponse({
+    status: 404,
+    description: &#x27;Product not found&#x27;,
+    example: {
+      statusCode: 404,
+      message: &#x27;Product not found&#x27;,
+    },
+  })
   @Roles(Role.ADMIN)
   @Patch(&#x27;:productid&#x27;)
   updateProduct(
@@ -554,6 +933,54 @@ export class ProductsController {
     return this.productsService.updateProduct(updateProductDto, productId);
   }
 
+  @ApiBearerAuth(&#x27;bearer&#x27;)
+  @ApiOperation({
+    summary: &#x27;Delete a product&#x27;,
+    description:
+      &#x27;Soft deletes a product by ID. The product data is retained in the database but marked as deleted. Only accessible by admin users.&#x27;,
+  })
+  @ApiParam({
+    name: &#x27;productid&#x27;,
+    type: &#x27;string&#x27;,
+    format: &#x27;uuid&#x27;,
+    description: &#x27;The unique identifier of the product to delete&#x27;,
+    example: &#x27;a48ac60f-b091-4ac5-9685-fe9aec69d2b3&#x27;,
+  })
+  @ApiResponse({
+    status: 200,
+    description: &#x27;Product deleted successfully&#x27;,
+    example: {
+      apiVersion: &#x27;1.0.0&#x27;,
+      statusCode: 200,
+      data: {
+        message: &#x27;Product deleted successfully.&#x27;,
+      },
+    },
+  })
+  @ApiResponse({
+    status: 401,
+    description: &#x27;Unauthorized - Missing or invalid JWT token&#x27;,
+    example: {
+      statusCode: 401,
+      message: &#x27;Unauthorized&#x27;,
+    },
+  })
+  @ApiResponse({
+    status: 403,
+    description: &#x27;Forbidden - User does not have admin role&#x27;,
+    example: {
+      statusCode: 403,
+      message: &#x27;Insufficient permissions&#x27;,
+    },
+  })
+  @ApiResponse({
+    status: 404,
+    description: &#x27;Product not found&#x27;,
+    example: {
+      statusCode: 404,
+      message: &#x27;Product not found&#x27;,
+    },
+  })
   @Roles(Role.ADMIN)
   @Delete(&#x27;:productid&#x27;)
   // @HttpCode(204)
