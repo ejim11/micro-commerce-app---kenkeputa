@@ -27,7 +27,7 @@ export class CreateUserProvider {
     createUserDto: CreateUserDto,
   ): Promise<Partial<User>> {
     const existingUser = await this.usersRepository.findOne({
-      where: { email: createUserDto.email },
+      where: { email: createUserDto.email.toLowerCase() },
     });
 
     if (existingUser) {
