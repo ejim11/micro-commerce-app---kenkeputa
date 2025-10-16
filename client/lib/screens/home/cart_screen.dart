@@ -1,4 +1,5 @@
 import 'package:client/providers/cart_provider.dart';
+import 'package:client/utils/snackbar_util.dart';
 import 'package:client/widgets/cart/cart_item.dart';
 import 'package:client/widgets/cart/cart_summary.dart';
 import 'package:flutter/material.dart';
@@ -137,13 +138,11 @@ class _CartScreenState extends ConsumerState<CartScreen> {
                   );
 
                   if (confirm == true && mounted) {
-                    await ref.read(cartProvider.notifier).clearCart();
+                    await ref
+                        .read(cartProvider.notifier)
+                        .clearCart(shouldCallApi: true);
                     if (mounted) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Cart cleared successfully'),
-                        ),
-                      );
+                      SnackBarUtil.show(context, message: 'Cart cleared!');
                     }
                   }
                 },
