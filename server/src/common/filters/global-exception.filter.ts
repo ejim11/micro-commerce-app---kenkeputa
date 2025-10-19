@@ -230,9 +230,11 @@ export class GlobalExceptionFilter implements ExceptionFilter {
    * @returns db error object
    */
   private sanitizeDatabaseError(error: QueryFailedError): any {
+    console.log('error: ', error);
     // Remove sensitive information from database errors
     return {
       code: (error as any).code,
+      detail: (error as any).detail,
       constraint: (error as any).constraint,
       table: (error as any).table,
       column: (error as any).column,
